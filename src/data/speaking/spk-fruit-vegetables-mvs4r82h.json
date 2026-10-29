@@ -1,0 +1,159 @@
+{
+  "id": "spk-fruit-vegetables-mvs4r82h",
+  "title": "Fruit & vegetables",
+  "part": "Part 1",
+  "topicCategory": "个人与日常生活",
+  "questionPrompt": "Fruit & vegetables",
+  "questions": [
+    {
+      "question": "How often do you eat fruit and vegetables?",
+      "sampleAnswer": "I’d say I eat them almost every day, usually some fruit for breakfast and vegetables with my main meals. I try to have a good mix, because they keep me healthy.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "Where do you usually buy fruit and vegetables?",
+      "sampleAnswer": "I usually buy them at a local market near my home, because the produce is fresh and cheaper. Sometimes I also order them online when I’m too busy to go out.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "What kind of fruits and vegetables do you dislike?",
+      "sampleAnswer": "To be honest, I’m not really into bitter things like bitter melon. I find the taste too strong for me, though I know it’s healthy, so I try to have a little now and then.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "Were there any kinds you disliked as a child?",
+      "sampleAnswer": "Yes, I remember I really disliked mushrooms as a child. It was because of the slippery texture, and I used to pick them out of every dish. I’ve grown to like them now, though.",
+      "perspective": "思路三"
+    },
+    {
+      "question": "Do people in your country like planting vegetables?",
+      "sampleAnswer": "Generally speaking, yes, it’s becoming quite popular, especially among older people and in small towns. Many families grow vegetables on balconies or in gardens, because it’s fresh and satisfying. I think it’s a good habit that is spreading.",
+      "perspective": "思路四"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "I’d say I eat them almost every day, usually some fruit for breakfast and vegetables with my main meals. I try to have a good mix, because they keep me healthy.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "a good mix",
+      "pos": "n. phr.",
+      "chinese": "丰富均衡的组合搭配",
+      "exampleSentence": "I try to have a good mix of fruit and vegetables because they keep me healthy.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-fruit-vegetables-mvs4r82h"
+    },
+    {
+      "id": "sv-2",
+      "term": "fresh produce",
+      "pos": "n. phr.",
+      "chinese": "新鲜农产品/蔬果",
+      "exampleSentence": "I prefer local wet markets because the produce is fresh and reasonably priced.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-fruit-vegetables-mvs4r82h"
+    },
+    {
+      "id": "sv-3",
+      "term": "slippery texture",
+      "pos": "n. phr.",
+      "chinese": "滑溜的口感/质地",
+      "exampleSentence": "I avoided eating cooked mushrooms as a kid due to their slippery texture.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-fruit-vegetables-mvs4r82h"
+    },
+    {
+      "id": "sv-4",
+      "term": "pick out of",
+      "pos": "v. phr.",
+      "chinese": "从……中挑选剔除",
+      "exampleSentence": "I used to pick mushrooms out of every dish my parents prepared.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-fruit-vegetables-mvs4r82h"
+    },
+    {
+      "id": "sv-5",
+      "term": "grow vegetables on balconies",
+      "pos": "v. phr.",
+      "chinese": "在阳台上种植蔬菜",
+      "exampleSentence": "Many families grow vegetables on balconies because it is both fresh and satisfying.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-fruit-vegetables-mvs4r82h"
+    }
+  ],
+  "mindMap": {
+    "label": "Dietary Habits & Fresh Produce",
+    "children": [
+      {
+        "label": "Daily Consumption",
+        "children": [
+          {
+            "label": "Daily intake for breakfast and dinners",
+            "children": []
+          },
+          {
+            "label": "Balanced mix for physical wellbeing",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Shopping Channels",
+        "children": [
+          {
+            "label": "Neighborhood market for fresh harvest",
+            "children": []
+          },
+          {
+            "label": "Online delivery when schedule is tight",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Taste Profiles & Changes",
+        "children": [
+          {
+            "label": "Aversion to intense bitter melon",
+            "children": []
+          },
+          {
+            "label": "Childhood dislike of slippery mushrooms",
+            "children": []
+          },
+          {
+            "label": "Acquiring tastes over the years",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Urban Gardening Phenomenon",
+        "children": [
+          {
+            "label": "Balcony planting among older generations",
+            "children": []
+          },
+          {
+            "label": "Sense of fulfillment from self-grown greens",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=900&auto=format&fit=crop&q=80",
+      "caption": "Fresh Organic Produce at Local Stall"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900&auto=format&fit=crop&q=80",
+      "caption": "Colorful Healthy Mixed Salad Plate"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=900&auto=format&fit=crop&q=80",
+      "caption": "Home Balcony Vegetable Gardening"
+    }
+  ]
+}

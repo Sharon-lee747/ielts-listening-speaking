@@ -1,0 +1,151 @@
+{
+  "id": "spk-advertisement-mvs5bcie",
+  "title": "Advertisement",
+  "part": "Part 1",
+  "topicCategory": "社会与媒体文化",
+  "questionPrompt": "Advertisement",
+  "questions": [
+    {
+      "question": "Do you like advertisements?",
+      "sampleAnswer": "Honestly, I’m not really into most ads, because I find them repetitive and a bit annoying. I usually skip them quickly, unless they are short and funny.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "Do you often see advertisements on your phone or computer?",
+      "sampleAnswer": "Yes, I’d say I see them all the time, because most apps and websites are full of ads. I usually scroll past them quickly, unless one catches my eye.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "Do you see a lot of advertising on trains or other transport?",
+      "sampleAnswer": "Yes, I do, quite a lot. There are screens and posters on buses and trains, and I tend to notice them, though I don’t really pay attention unless they’re interesting.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "Is there an advertisement that made an impression on you when you were a child?",
+      "sampleAnswer": "Yes, there is. I can still remember a funny ad about a family and their car that used to play on TV. It was when I was about eight, and I would always stop to watch it because it made me laugh.",
+      "perspective": "思路三"
+    },
+    {
+      "question": "What kind of advertising do you like?",
+      "sampleAnswer": "I’d say I quite like creative or humorous ads, because they tell a mini-story and make you smile. For example, funny short ads on social media are the only ones I actually watch to the end.",
+      "perspective": "思路一"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "Honestly, I’m not really into most ads, because I find them repetitive and a bit annoying. I usually skip them quickly, unless they are short and funny.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "repetitive and a bit annoying",
+      "pos": "adj. phr.",
+      "chinese": "重复繁琐且有点烦人",
+      "exampleSentence": "I skip online ads because I find them repetitive and a bit annoying.",
+      "topicCategory": "社会与媒体文化",
+      "sourceTestId": "spk-advertisement-mvs5bcie"
+    },
+    {
+      "id": "sv-2",
+      "term": "scroll past",
+      "pos": "v. phr.",
+      "chinese": "快速滑过/刷过去",
+      "exampleSentence": "I usually scroll past sponsored posts unless one catches my eye.",
+      "topicCategory": "社会与媒体文化",
+      "sourceTestId": "spk-advertisement-mvs5bcie"
+    },
+    {
+      "id": "sv-3",
+      "term": "catch one's eye",
+      "pos": "idiom",
+      "chinese": "吸引某人的注意力",
+      "exampleSentence": "A creative campaign with bright colors instantly caught my eye.",
+      "topicCategory": "社会与媒体文化",
+      "sourceTestId": "spk-advertisement-mvs5bcie"
+    },
+    {
+      "id": "sv-4",
+      "term": "tell a mini-story",
+      "pos": "v. phr.",
+      "chinese": "讲述一个微型小故事",
+      "exampleSentence": "Effective commercials often tell a mini-story rather than push sales aggressively.",
+      "topicCategory": "社会与媒体文化",
+      "sourceTestId": "spk-advertisement-mvs5bcie"
+    },
+    {
+      "id": "sv-5",
+      "term": "make an impression on",
+      "pos": "v. phr.",
+      "chinese": "给……留下深刻印象",
+      "exampleSentence": "That humorous TV commercial made a lasting impression on me as a child.",
+      "topicCategory": "社会与媒体文化",
+      "sourceTestId": "spk-advertisement-mvs5bcie"
+    }
+  ],
+  "mindMap": {
+    "label": "Advertising & Media Exposure",
+    "children": [
+      {
+        "label": "General Perception",
+        "children": [
+          {
+            "label": "Annoyed by repetitive promos",
+            "children": []
+          },
+          {
+            "label": "Instant skip instinct",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Digital Encounters",
+        "children": [
+          {
+            "label": "Ubiquitous presence on apps",
+            "children": []
+          },
+          {
+            "label": "Fast scrolling past banners",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Transit & Public Ads",
+        "children": [
+          {
+            "label": "Subway posters and bus screens",
+            "children": []
+          },
+          {
+            "label": "Passive visual intake during commutes",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Favorite Formats & Memories",
+        "children": [
+          {
+            "label": "Humorous short video storytelling",
+            "children": []
+          },
+          {
+            "label": "Nostalgic childhood car ad on TV",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=900&auto=format&fit=crop&q=80",
+      "caption": "Smartphone Notifications and Digital Ads"
+    },
+    {
+      "url": "https://ts2.tc.mm.bing.net/th/id/OIP-C.Kt2azE1MZSQujcNg0pXWzAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "caption": "Creative ad"
+    }
+  ]
+}

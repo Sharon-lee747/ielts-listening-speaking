@@ -1,0 +1,134 @@
+{
+  "id": "customer-service",
+  "title": "customer-service",
+  "part": "Part 2 & 3",
+  "topicCategory": "经营理念与服务类",
+  "questionPrompt": "Part 2: Describe a time when you received excellent customer service. You should say what the service was, when and where you received it, who provided it, and explain why you thought it was excellent.\n\nPart 3: Why is good customer service important? How can businesses encourage customer loyalty?",
+  "questions": [],
+  "cueCardPoints": [
+    "What the service was",
+    "When and where you received it",
+    "Who provided the service",
+    "Why you thought it was excellent"
+  ],
+  "audioUrl": "/audio/spk-cam18-customer-service.mp3",
+  "sampleAnswer": "I'd like to talk about a memorable visit to Riverside Market, where I experienced excellent customer service. I went there on a Saturday morning with my sister because we wanted to buy some fresh local produce. One stallholder noticed that we were unsure about the different kinds of honey, so she took the time to explain where each one came from and let us try a small sample. What impressed me most was that she went the extra mile without putting any pressure on us to buy anything. The whole interaction felt warm and genuine, and it made the market feel like a real community rather than just a place to shop. In the end, we bought a jar of local honey and some cheese, and I would definitely return. For a small business, this kind of personal attention can make a lasting impression. It builds trust, encourages repeat custom, and helps customers feel valued. In my view, good service is not simply about solving a problem; it is about creating an experience that people want to share with others.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "go the extra mile",
+      "pos": "idiom",
+      "chinese": "加倍努力；提供超预期的服务",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "She went the extra mile by explaining where each kind of honey came from.",
+      "sourceTestId": "customer-service"
+    },
+    {
+      "id": "sv-2",
+      "term": "fresh local produce",
+      "pos": "n. phr.",
+      "chinese": "新鲜的本地农产品",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "We wanted to buy some fresh local produce.",
+      "sourceTestId": "customer-service"
+    },
+    {
+      "id": "sv-3",
+      "term": "make a lasting impression",
+      "pos": "v. phr.",
+      "chinese": "留下持久而深刻的印象",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "Personal attention can make a lasting impression.",
+      "sourceTestId": "customer-service"
+    },
+    {
+      "id": "sv-4",
+      "term": "repeat custom",
+      "pos": "n. phr.",
+      "chinese": "回头客；重复消费",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "Good service encourages repeat custom.",
+      "sourceTestId": "customer-service"
+    },
+    {
+      "id": "sv-5",
+      "term": "feel valued",
+      "pos": "v. phr.",
+      "chinese": "感到受到重视",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "It helps customers feel valued.",
+      "sourceTestId": "customer-service"
+    },
+    {
+      "id": "sv-6",
+      "term": "build trust",
+      "pos": "v. phr.",
+      "chinese": "建立信任",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "This kind of personal attention builds trust.",
+      "sourceTestId": "customer-service"
+    }
+  ],
+  "mindMap": {
+    "label": "Excellent Customer Service at Riverside Market",
+    "children": [
+      {
+        "label": "Background and Setting",
+        "children": [
+          {
+            "label": "Saturday morning visit with my sister",
+            "children": []
+          },
+          {
+            "label": "Shopping for fresh local produce",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Helpful Personal Attention",
+        "children": [
+          {
+            "label": "Stallholder explained the local honey",
+            "children": []
+          },
+          {
+            "label": "Offered a sample without pressure",
+            "children": []
+          },
+          {
+            "label": "Went the extra mile",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Impact and Reflection",
+        "children": [
+          {
+            "label": "Warm and genuine interaction",
+            "children": []
+          },
+          {
+            "label": "Built trust and repeat custom",
+            "children": []
+          },
+          {
+            "label": "Made customers feel valued",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=900&auto=format&fit=crop&q=80",
+      "caption": "Warm Hospitality & Assistance"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&auto=format&fit=crop&q=80",
+      "caption": "Personal Attention & Customer Trust"
+    }
+  ]
+}

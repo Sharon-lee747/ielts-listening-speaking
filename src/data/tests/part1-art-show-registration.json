@@ -1,0 +1,803 @@
+{
+  "id": "part1-art-show-registration",
+  "title": "Part 1: Art Show Registration Form",
+  "topicCategory": "文化艺术与历史类",
+  "audioUrl": "/audio/office%20move.mp3",
+  "transcript": [
+    {
+      "id": "seg-1",
+      "startTime": 0,
+      "endTime": 7,
+      "speaker": "Speaker",
+      "text": "You will hear a person phoning an art show information line to inquire about the details of an upcoming event."
+    },
+    {
+      "id": "seg-2",
+      "startTime": 7,
+      "endTime": 12,
+      "speaker": "Speaker",
+      "text": "First, you have some time to look at questions one to ten."
+    },
+    {
+      "id": "seg-3",
+      "startTime": 61,
+      "endTime": 66,
+      "speaker": "Speaker",
+      "text": "Now listen carefully and answer questions one to ten."
+    },
+    {
+      "id": "seg-4",
+      "startTime": 68,
+      "endTime": 73,
+      "speaker": "Speaker",
+      "text": "Hello, welcome to the Annual Community Art Show information line. How can I help you today?"
+    },
+    {
+      "id": "seg-5",
+      "startTime": 74,
+      "endTime": 82,
+      "speaker": "Speaker",
+      "text": "Hi, I've already purchased my ticket for the art show, but I wanted to check a few details before the event. Can you help me with that?"
+    },
+    {
+      "id": "seg-6",
+      "startTime": 83,
+      "endTime": 85,
+      "speaker": "Speaker",
+      "text": "Certainly, I'll just need a few details."
+    },
+    {
+      "id": "seg-7",
+      "startTime": 86,
+      "endTime": 89,
+      "speaker": "Speaker",
+      "text": "Can you provide your postcode to find your booking?"
+    },
+    {
+      "id": "seg-8",
+      "startTime": 89,
+      "endTime": 91,
+      "speaker": "Speaker",
+      "text": "Sure, it's AF74 1T."
+    },
+    {
+      "id": "seg-9",
+      "startTime": 92,
+      "endTime": 93,
+      "speaker": "Speaker",
+      "text": "Thank you."
+    },
+    {
+      "id": "seg-10",
+      "startTime": 94,
+      "endTime": 99,
+      "speaker": "Speaker",
+      "text": "Ah, yes, I've found your booking. Just to confirm, you've booked for the 25th of November, right?"
+    },
+    {
+      "id": "seg-11",
+      "startTime": 99,
+      "endTime": 102,
+      "speaker": "Speaker",
+      "text": "Yes, that's correct. What time does the event begin?"
+    },
+    {
+      "id": "seg-12",
+      "startTime": 103,
+      "endTime": 107,
+      "speaker": "The doors open at 4",
+      "text": "00 p.m., but the actual event starts at 4:30 p.m."
+    },
+    {
+      "id": "seg-13",
+      "startTime": 108,
+      "endTime": 112,
+      "speaker": "Speaker",
+      "text": "However, we advise arriving early to avoid any delays."
+    },
+    {
+      "id": "seg-14",
+      "startTime": 113,
+      "endTime": 116,
+      "speaker": "Speaker",
+      "text": "By the way, did you know there's a discount for local residents?"
+    },
+    {
+      "id": "seg-15",
+      "startTime": 116,
+      "endTime": 122,
+      "speaker": "Speaker",
+      "text": "Yes, I think I already received it. I'm pretty sure I paid 16 pounds 50 pence, right?"
+    },
+    {
+      "id": "seg-16",
+      "startTime": 123,
+      "endTime": 124,
+      "speaker": "Speaker",
+      "text": "Hmm, let me check."
+    },
+    {
+      "id": "seg-17",
+      "startTime": 124,
+      "endTime": 129,
+      "speaker": "Speaker",
+      "text": "Ah, yes, you're right. You paid 16 pounds 50 instead of the standard 20 pounds."
+    },
+    {
+      "id": "seg-18",
+      "startTime": 130,
+      "endTime": 132,
+      "speaker": "Speaker",
+      "text": "I'm glad I qualified for the discount."
+    },
+    {
+      "id": "seg-19",
+      "startTime": 132,
+      "endTime": 136,
+      "speaker": "Speaker",
+      "text": "Will my family members be able to come for free, as I heard?"
+    },
+    {
+      "id": "seg-20",
+      "startTime": 136,
+      "endTime": 141,
+      "speaker": "Speaker",
+      "text": "That's correct. Family members of local residents can enter free of charge."
+    },
+    {
+      "id": "seg-21",
+      "startTime": 141,
+      "endTime": 145,
+      "speaker": "Speaker",
+      "text": "Just make sure you bring some form of ID that shows your residency."
+    },
+    {
+      "id": "seg-22",
+      "startTime": 145,
+      "endTime": 150,
+      "speaker": "Speaker",
+      "text": "Excellent. Do you know how many artworks will be on display this year?"
+    },
+    {
+      "id": "seg-23",
+      "startTime": 150,
+      "endTime": 156,
+      "speaker": "Speaker",
+      "text": "Oh, there will be more than 360 pieces from both local and international artists."
+    },
+    {
+      "id": "seg-24",
+      "startTime": 156,
+      "endTime": 161,
+      "speaker": "Speaker",
+      "text": "Last year, we had 320 pieces, but we've expanded the exhibition."
+    },
+    {
+      "id": "seg-25",
+      "startTime": 162,
+      "endTime": 163,
+      "speaker": "Speaker",
+      "text": "That's impressive."
+    },
+    {
+      "id": "seg-26",
+      "startTime": 163,
+      "endTime": 166,
+      "speaker": "Speaker",
+      "text": "And will there be any special performances this time?"
+    },
+    {
+      "id": "seg-27",
+      "startTime": 167,
+      "endTime": 170,
+      "speaker": "Speaker",
+      "text": "Yes, there's a live sound show that's generating a lot of excitement."
+    },
+    {
+      "id": "seg-28",
+      "startTime": 171,
+      "endTime": 174,
+      "speaker": "Speaker",
+      "text": "It's actually the first time we're including this type of performance."
+    },
+    {
+      "id": "seg-29",
+      "startTime": 175,
+      "endTime": 179,
+      "speaker": "Speaker",
+      "text": "Oh, a sound performance! I love unique events like that."
+    },
+    {
+      "id": "seg-30",
+      "startTime": 180,
+      "endTime": 187,
+      "speaker": "Speaker",
+      "text": "Now, I also heard there will be live music, right? I believe I read it's going to be guitar music."
+    },
+    {
+      "id": "seg-31",
+      "startTime": 187,
+      "endTime": 191,
+      "speaker": "Speaker",
+      "text": "Actually, there was an initial plan for guitar music, but it's been changed."
+    },
+    {
+      "id": "seg-32",
+      "startTime": 192,
+      "endTime": 197,
+      "speaker": "Speaker",
+      "text": "Instead, we'll have live piano music, which we think will create a better atmosphere for the event."
+    },
+    {
+      "id": "seg-33",
+      "startTime": 197,
+      "endTime": 199,
+      "speaker": "Speaker",
+      "text": "That sounds lovely."
+    },
+    {
+      "id": "seg-34",
+      "startTime": 199,
+      "endTime": 203,
+      "speaker": "Speaker",
+      "text": "Now, I'm curious about refreshments. Will there be any available?"
+    },
+    {
+      "id": "seg-35",
+      "startTime": 203,
+      "endTime": 212,
+      "speaker": "Speaker",
+      "text": "Yes, drinks will be sold at the venue, and each ticket holder gets a free drink, either alcoholic or non-alcoholic, depending on your preference."
+    },
+    {
+      "id": "seg-36",
+      "startTime": 213,
+      "endTime": 218,
+      "speaker": "Speaker",
+      "text": "We'll have a selection of beverages available, including water, juices, and wine."
+    },
+    {
+      "id": "seg-37",
+      "startTime": 218,
+      "endTime": 222,
+      "speaker": "Speaker",
+      "text": "Nice, I'll probably stick to non-alcoholic."
+    },
+    {
+      "id": "seg-38",
+      "startTime": 222,
+      "endTime": 226,
+      "speaker": "Speaker",
+      "text": "I'm bringing my kids along. Are there any special activities for them?"
+    },
+    {
+      "id": "seg-39",
+      "startTime": 226,
+      "endTime": 230,
+      "speaker": "Speaker",
+      "text": "Certainly. We're offering art workshops for children under 12."
+    },
+    {
+      "id": "seg-40",
+      "startTime": 231,
+      "endTime": 235,
+      "speaker": "Speaker",
+      "text": "But please note that parents or guardians must accompany them at all times during the event."
+    },
+    {
+      "id": "seg-41",
+      "startTime": 236,
+      "endTime": 240,
+      "speaker": "Speaker",
+      "text": "Understood. I'll make sure to keep an eye on them."
+    },
+    {
+      "id": "seg-42",
+      "startTime": 240,
+      "endTime": 241,
+      "speaker": "Speaker",
+      "text": "One last thing."
+    },
+    {
+      "id": "seg-43",
+      "startTime": 242,
+      "endTime": 246,
+      "speaker": "Speaker",
+      "text": "What happens if the event is cancelled? Will we get our money back?"
+    },
+    {
+      "id": "seg-44",
+      "startTime": 246,
+      "endTime": 250,
+      "speaker": "Speaker",
+      "text": "Unfortunately, the tickets are non-refundable, but don't worry."
+    },
+    {
+      "id": "seg-45",
+      "startTime": 250,
+      "endTime": 253,
+      "speaker": "Speaker",
+      "text": "We've taken out an insurance policy for the event."
+    },
+    {
+      "id": "seg-46",
+      "startTime": 254,
+      "endTime": 259,
+      "speaker": "Speaker",
+      "text": "In the event of cancellation, the insurance will cover the cost of your tickets, so you're safe there."
+    },
+    {
+      "id": "seg-47",
+      "startTime": 259,
+      "endTime": 262,
+      "speaker": "Speaker",
+      "text": "That's good to know. Thanks for all the information."
+    },
+    {
+      "id": "seg-48",
+      "startTime": 263,
+      "endTime": 266,
+      "speaker": "Speaker",
+      "text": "You're welcome. We look forward to seeing you at the event."
+    },
+    {
+      "id": "seg-49",
+      "startTime": 268,
+      "endTime": 275,
+      "speaker": "Speaker",
+      "text": "That is the end of part one. You now have one minute to check your answers to part one."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "fill_blank",
+      "prompt": "Visitor Details:\n• Name: Alex Brown\n• Postcode: ____",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "AF74 1T",
+        "AF741T"
+      ],
+      "explanation": "工作人员询问邮编（postcode），女士回答为“AF74 1T”。注意英文字母与数字组合的书写准确性。",
+      "audioRef": {
+        "sentence": "Sure, it's AF74 1T.",
+        "startTime": 89,
+        "endTime": 91
+      },
+      "sentence": "Sure, it's AF74 1T."
+    },
+    {
+      "id": "q2",
+      "type": "fill_blank",
+      "prompt": "Event Details:\n• Date: 25th November\n• Time: ____",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "4:30 pm",
+        "4.30 pm",
+        "4:30",
+        "4.30",
+        "4:30 p.m.",
+        "4.30 p.m."
+      ],
+      "explanation": "题目询问活动开始时间（Time）。工作人员说明开门时间为 4:00 p.m.（干扰项），但活动正式开始时间为 4:30 p.m.（the actual event starts at 4:30 p.m.）。",
+      "audioRef": {
+        "sentence": "The doors open at 4:00 p.m., but the actual event starts at 4:30 p.m.",
+        "startTime": 103,
+        "endTime": 107
+      },
+      "sentence": "The doors open at 4:00 p.m., but the actual event starts at 4:30 p.m."
+    },
+    {
+      "id": "q3",
+      "type": "fill_blank",
+      "prompt": "• Standard Ticket Price: £20.00\n• Discounted Ticket (for residents): £____",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "16.50"
+      ],
+      "explanation": "题干已有英镑符号 £，空格只需填写金额数字。女士提到自己支付了 16.50（paid 16 pounds 50 pence），工作人员随后核实确认（You paid 16 pounds 50 instead of the standard 20 pounds），故答案为 16.50。",
+      "audioRef": {
+        "sentence": "Ah, yes, you're right. You paid 16 pounds 50 instead of the standard 20 pounds.",
+        "startTime": 124,
+        "endTime": 129
+      },
+      "sentence": "Ah, yes, you're right. You paid 16 pounds 50 instead of the standard 20 pounds."
+    },
+    {
+      "id": "q4",
+      "type": "fill_blank",
+      "prompt": "• Free entry for ____ members",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "family"
+      ],
+      "explanation": "女士询问家人是否能免费入场（Will my family members be able to come for free），工作人员确认道：Family members of local residents can enter free of charge。空格后已有 members，因此填入 family 即可。",
+      "audioRef": {
+        "sentence": "That's correct. Family members of local residents can enter free of charge.",
+        "startTime": 136,
+        "endTime": 141
+      },
+      "sentence": "That's correct. Family members of local residents can enter free of charge."
+    },
+    {
+      "id": "q5",
+      "type": "fill_blank",
+      "prompt": "• Over ____ artworks on display",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "360"
+      ],
+      "explanation": "题干中 Over 对应原文的 more than。工作人员指出今年展出超过 360 件作品（more than 360 pieces），去年是 320 件（干扰项）。故填 360。",
+      "audioRef": {
+        "sentence": "Oh, there will be more than 360 pieces from both local and international artists.",
+        "startTime": 150,
+        "endTime": 156
+      },
+      "sentence": "Oh, there will be more than 360 pieces from both local and international artists."
+    },
+    {
+      "id": "q6",
+      "type": "fill_blank",
+      "prompt": "• Special live performances include a ____ show.",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "sound"
+      ],
+      "explanation": "定位词为 Special live performances。工作人员介绍道有一场现场声音秀（live sound show），女士接着重复确认了 sound performance，因此填 sound。",
+      "audioRef": {
+        "sentence": "Yes, there's a live sound show that's generating a lot of excitement.",
+        "startTime": 168,
+        "endTime": 171,
+        "timestampOverride": true
+      },
+      "sentence": "Yes, there's a live sound show that's generating a lot of excitement."
+    },
+    {
+      "id": "q7",
+      "type": "fill_blank",
+      "prompt": "Additional Facilities:\n• Live ____ music",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "piano"
+      ],
+      "explanation": "女士提到听说有吉他音乐（guitar music），工作人员纠正说原本有吉他计划但已更改（an initial plan for guitar music, but it's been changed），改为现场钢琴音乐（live piano music），因此填 piano。",
+      "audioRef": {
+        "sentence": "Instead, we'll have live piano music, which we think will create a better atmosphere for the event.",
+        "startTime": 192,
+        "endTime": 197
+      },
+      "sentence": "Instead, we'll have live piano music, which we think will create a better atmosphere for the event."
+    },
+    {
+      "id": "q8",
+      "type": "fill_blank",
+      "prompt": "• Refreshments will be available for purchase, including a free ____ with each ticket.",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "drink"
+      ],
+      "explanation": "工作人员说明酒水在现场售卖，并且每位持票者可获赠一杯免费饮品（each ticket holder gets a free drink），对应题干中的 a free ____ with each ticket，故填 drink。",
+      "audioRef": {
+        "sentence": "Yes, drinks will be sold at the venue, and each ticket holder gets a free drink, either alcoholic or non-alcoholic, depending on your preference.",
+        "startTime": 203,
+        "endTime": 212
+      },
+      "sentence": "Yes, drinks will be sold at the venue, and each ticket holder gets a free drink, either alcoholic or non-alcoholic, depending on your preference."
+    },
+    {
+      "id": "q9",
+      "type": "fill_blank",
+      "prompt": "Important Information:\n• available for children under ____ (accompanied by parents)",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "12"
+      ],
+      "explanation": "女士询问儿童专属活动，工作人员说明为 12 岁以下儿童提供艺术工坊（art workshops for children under 12），故填数字 12。",
+      "audioRef": {
+        "sentence": "Certainly. We're offering art workshops for children under 12.",
+        "startTime": 226,
+        "endTime": 230
+      },
+      "sentence": "Certainly. We're offering art workshops for children under 12."
+    },
+    {
+      "id": "q10",
+      "type": "fill_blank",
+      "prompt": "• non-refundable but covered by ____ in case of event cancellation",
+      "options": [],
+      "items": [],
+      "correctAnswer": [
+        "insurance"
+      ],
+      "explanation": "题干中 covered by... in case of event cancellation 对应原文 In the event of cancellation, the insurance will cover the cost of your tickets，因此是由保险（insurance）承保，填入 insurance。",
+      "audioRef": {
+        "sentence": "In the event of cancellation, the insurance will cover the cost of your tickets, so you're safe there.",
+        "startTime": 254,
+        "endTime": 259
+      },
+      "sentence": "In the event of cancellation, the insurance will cover the cost of your tickets, so you're safe there."
+    }
+  ],
+  "keySentences": [
+    {
+      "id": "ks-1",
+      "english": "The doors open at 4:00 p.m., but the actual event starts at 4:30 p.m.",
+      "chinese": "大门将在下午 4:00 开放，但实际活动是在下午 4:30 开始。",
+      "examPoint": "时间陷阱与强转折考点：doors open 与 actual event starts 属于听力中极其常见的配对干扰项，注意转折连词 but 后的真实核心信息。",
+      "startTime": 103,
+      "endTime": 107
+    },
+    {
+      "id": "ks-2",
+      "english": "Ah, yes, you're right. You paid 16 pounds 50 instead of the standard 20 pounds.",
+      "chinese": "啊，对的，您说得没错。您支付了 16 镑 50 便士，而非标准票价 20 镑。",
+      "examPoint": "对比排除与连读考点：instead of 用于排除干扰数字 20 pounds，16 pounds 50 的口语化表达需快速反应并转化为标准数字写法 16.50。",
+      "startTime": 124,
+      "endTime": 129
+    },
+    {
+      "id": "ks-3",
+      "english": "Oh, there will be more than 360 pieces from both local and international artists.",
+      "chinese": "哦，届时将展出超过 360 件来自本地及国际艺术家的作品。",
+      "examPoint": "同义替换考点：more than 与题干中的 Over 构成经典同义替换，后面紧接着提及去年展出件数 320 作为干扰，需抓准时态与数词。",
+      "startTime": 150,
+      "endTime": 156
+    },
+    {
+      "id": "ks-4",
+      "english": "Instead, we'll have live piano music, which we think will create a better atmosphere for the event.",
+      "chinese": "相反，我们将安排现场钢琴音乐，我们认为这会为活动营造出更好的氛围。",
+      "examPoint": "计划变更与否定陷阱：前文用 there was an initial plan for guitar music, but it's been changed 否定了初始计划，副词 Instead 引导出最终正确方案 live piano music。",
+      "startTime": 192,
+      "endTime": 197
+    },
+    {
+      "id": "ks-5",
+      "english": "But please note that parents or guardians must accompany them at all times during the event.",
+      "chinese": "但请注意，活动期间父母或监护人必须全程陪同他们。",
+      "examPoint": "高频短语与被动转换：parents must accompany them 在笔记题干中常被转换为被动语态（accompanied by parents），属于雅思听力必备核心动词。",
+      "startTime": 231,
+      "endTime": 235
+    },
+    {
+      "id": "ks-6",
+      "english": "In the event of cancellation, the insurance will cover the cost of your tickets, so you're safe there.",
+      "chinese": "如果活动被取消，保险将赔付您的门票费用，所以这方面您完全可以放心。",
+      "examPoint": "主被动语态转化与介词短语考点：In the event of cancellation 对应 in case of event cancellation，the insurance will cover... 转换为 covered by insurance。",
+      "startTime": 254,
+      "endTime": 259
+    }
+  ],
+  "vocabulary": [
+    {
+      "id": "v-1",
+      "term": "annual",
+      "pos": "adj.",
+      "chinese": "每年的，年度的",
+      "topicCategory": "文化艺术与历史类",
+      "exampleSentence": "Hello, welcome to the Annual Community Art Show information line.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-2",
+      "term": "local resident",
+      "pos": "n. phr.",
+      "chinese": "当地居民",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "By the way, did you know there's a discount for local residents?",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-3",
+      "term": "qualify for",
+      "pos": "phr. v.",
+      "chinese": "具备……资格，符合……条件",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "I'm glad I qualified for the discount.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-4",
+      "term": "free of charge",
+      "pos": "idiom",
+      "chinese": "免费地",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "Family members of local residents can enter free of charge.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-5",
+      "term": "artwork",
+      "pos": "n.",
+      "chinese": "艺术品，美术品",
+      "topicCategory": "文化艺术与历史类",
+      "exampleSentence": "Do you know how many artworks will be on display this year?",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-6",
+      "term": "on display",
+      "pos": "prep. phr.",
+      "chinese": "陈列着，展出中",
+      "topicCategory": "文化艺术与历史类",
+      "exampleSentence": "Do you know how many artworks will be on display this year?",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-7",
+      "term": "expand",
+      "pos": "v.",
+      "chinese": "扩大，扩建，扩增",
+      "topicCategory": "文化艺术与历史类",
+      "exampleSentence": "Last year, we had 320 pieces, but we've expanded the exhibition.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-8",
+      "term": "generate excitement",
+      "pos": "collocation",
+      "chinese": "引发热烈反响，令人兴奋期待",
+      "topicCategory": "文化艺术与历史类",
+      "exampleSentence": "Yes, there's a live sound show that's generating a lot of excitement.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-9",
+      "term": "initial",
+      "pos": "adj.",
+      "chinese": "最初的，开始的",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "Actually, there was an initial plan for guitar music, but it's been changed.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-10",
+      "term": "refreshments",
+      "pos": "n. [pl.]",
+      "chinese": "茶点，便餐，饮料及小吃",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "Now, I'm curious about refreshments. Will there be any available?",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-11",
+      "term": "beverage",
+      "pos": "n.",
+      "chinese": "饮料",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "We'll have a selection of beverages available, including water, juices, and wine.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-12",
+      "term": "non-alcoholic",
+      "pos": "adj.",
+      "chinese": "不含酒精的",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "Yes, drinks will be sold at the venue, and each ticket holder gets a free drink, either alcoholic or non-alcoholic, depending on your preference.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-13",
+      "term": "guardian",
+      "pos": "n.",
+      "chinese": "监护人",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "But please note that parents or guardians must accompany them at all times during the event.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-14",
+      "term": "accompany",
+      "pos": "v.",
+      "chinese": "陪伴，陪同",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "But please note that parents or guardians must accompany them at all times during the event.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-15",
+      "term": "keep an eye on",
+      "pos": "idiom",
+      "chinese": "照看，留心看顾",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "Understood. I'll make sure to keep an eye on them.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-16",
+      "term": "non-refundable",
+      "pos": "adj.",
+      "chinese": "不可退款的",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "Unfortunately, the tickets are non-refundable, but don't worry.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-17",
+      "term": "take out an insurance policy",
+      "pos": "v. phr.",
+      "chinese": "购买保险，投保",
+      "topicCategory": "经营理念与服务类",
+      "exampleSentence": "We've taken out an insurance policy for the event.",
+      "sourceTestId": "part1-art-show-registration"
+    },
+    {
+      "id": "v-18",
+      "term": "in the event of",
+      "pos": "prep. phr.",
+      "chinese": "如果发生……，万一……",
+      "topicCategory": "日常服务与市政交通",
+      "exampleSentence": "In the event of cancellation, the insurance will cover the cost of your tickets, so you're safe there.",
+      "sourceTestId": "part1-art-show-registration"
+    }
+  ],
+  "mindMap": {
+    "label": "Annual Community Art Show Registration",
+    "children": [
+      {
+        "label": "Visitor & Ticket Details",
+        "children": [
+          {
+            "label": "Name: Alex Brown"
+          },
+          {
+            "label": "Postcode: AF74 1T"
+          },
+          {
+            "label": "Date & Time: 25th November (Doors open 4:00 pm, Starts 4:30 pm)"
+          },
+          {
+            "label": "Ticket Pricing: Standard £20.00 vs Local Discount £16.50"
+          },
+          {
+            "label": "Family Members of Residents: Free entry with proof of residency"
+          }
+        ]
+      },
+      {
+        "label": "Artworks & Live Performances",
+        "children": [
+          {
+            "label": "Artworks Displayed: Over 360 pieces (expanded from 320 last year)"
+          },
+          {
+            "label": "Special Feature: First-ever live sound show"
+          },
+          {
+            "label": "Music Performance: Live piano music (changed from guitar plan)"
+          }
+        ]
+      },
+      {
+        "label": "Facilities & Important Information",
+        "children": [
+          {
+            "label": "Refreshments: Free drink with each ticket (alcoholic or non-alcoholic)"
+          },
+          {
+            "label": "Children Activities: Art workshops for children under 12"
+          },
+          {
+            "label": "Safety Rule: Parents or guardians must accompany children at all times"
+          },
+          {
+            "label": "Cancellation Policy: Non-refundable tickets covered by insurance"
+          }
+        ]
+      }
+    ]
+  },
+  "mapImageUrl": "",
+  "rawTranscript": "[00:00-00:07] You will hear a person phoning an art show information line to inquire about the details of an upcoming event.\n[00:07-00:12] First, you have some time to look at questions one to ten.\n[01:01-01:06] Now listen carefully and answer questions one to ten.\n[01:08-01:13] Hello, welcome to the Annual Community Art Show information line. How can I help you today?\n[01:14-01:22] Hi, I've already purchased my ticket for the art show, but I wanted to check a few details before the event. Can you help me with that?\n[01:23-01:25] Certainly, I'll just need a few details.\n[01:26-01:29] Can you provide your postcode to find your booking?\n[01:29-01:31] Sure, it's AF74 1T.\n[01:32-01:33] Thank you.\n[01:34-01:39] Ah, yes, I've found your booking. Just to confirm, you've booked for the 25th of November, right?\n[01:39-01:42] Yes, that's correct. What time does the event begin?\n[01:43-01:47] The doors open at 4:00 p.m., but the actual event starts at 4:30 p.m.\n[01:48-01:52] However, we advise arriving early to avoid any delays.\n[01:53-01:56] By the way, did you know there's a discount for local residents?\n[01:56-02:02] Yes, I think I already received it. I'm pretty sure I paid 16 pounds 50 pence, right?\n[02:03-02:04] Hmm, let me check.\n[02:04-02:09] Ah, yes, you're right. You paid 16 pounds 50 instead of the standard 20 pounds.\n[02:10-02:12] I'm glad I qualified for the discount.\n[02:12-02:16] Will my family members be able to come for free, as I heard?\n[02:16-02:21] That's correct. Family members of local residents can enter free of charge.\n[02:21-02:25] Just make sure you bring some form of ID that shows your residency.\n[02:25-02:30] Excellent. Do you know how many artworks will be on display this year?\n[02:30-02:36] Oh, there will be more than 360 pieces from both local and international artists.\n[02:36-02:41] Last year, we had 320 pieces, but we've expanded the exhibition.\n[02:42-02:43] That's impressive.\n[02:43-02:46] And will there be any special performances this time?\n[02:47-02:50] Yes, there's a live sound show that's generating a lot of excitement.\n[02:51-02:54] It's actually the first time we're including this type of performance.\n[02:55-02:59] Oh, a sound performance! I love unique events like that.\n[03:00-03:07] Now, I also heard there will be live music, right? I believe I read it's going to be guitar music.\n[03:07-03:11] Actually, there was an initial plan for guitar music, but it's been changed.\n[03:12-03:17] Instead, we'll have live piano music, which we think will create a better atmosphere for the event.\n[03:17-03:19] That sounds lovely.\n[03:19-03:23] Now, I'm curious about refreshments. Will there be any available?\n[03:23-03:32] Yes, drinks will be sold at the venue, and each ticket holder gets a free drink, either alcoholic or non-alcoholic, depending on your preference.\n[03:33-03:38] We'll have a selection of beverages available, including water, juices, and wine.\n[03:38-03:42] Nice, I'll probably stick to non-alcoholic.\n[03:42-03:46] I'm bringing my kids along. Are there any special activities for them?\n[03:46-03:50] Certainly. We're offering art workshops for children under 12.\n[03:51-03:55] But please note that parents or guardians must accompany them at all times during the event.\n[03:56-04:00] Understood. I'll make sure to keep an eye on them.\n[04:00-04:01] One last thing.\n[04:02-04:06] What happens if the event is cancelled? Will we get our money back?\n[04:06-04:10] Unfortunately, the tickets are non-refundable, but don't worry.\n[04:10-04:13] We've taken out an insurance policy for the event.\n[04:14-04:19] In the event of cancellation, the insurance will cover the cost of your tickets, so you're safe there.\n[04:19-04:22] That's good to know. Thanks for all the information.\n[04:23-04:26] You're welcome. We look forward to seeing you at the event.\n[04:28-04:35] That is the end of part one. You now have one minute to check your answers to part one.",
+  "part": "Part 1"
+}

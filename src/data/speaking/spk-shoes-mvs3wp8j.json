@@ -1,0 +1,150 @@
+{
+  "id": "spk-shoes-mvs3wp8j",
+  "title": "Shoes",
+  "part": "Part 1",
+  "topicCategory": "个人与日常生活",
+  "questionPrompt": "Shoes",
+  "questions": [
+    {
+      "question": "Do you like buying shoes? How often?",
+      "sampleAnswer": "I’d say I quite enjoy buying shoes, and I probably do it every couple of months. I like trying them on and finding a pair that both looks good and feels comfortable.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "Have you ever bought shoes online?",
+      "sampleAnswer": "Yes, I have. A few months ago I bought a pair of running shoes on a shopping app. It was convenient and cheaper than in the shops, but I had to wait about a week for delivery.",
+      "perspective": "思路三"
+    },
+    {
+      "question": "How much money do you usually spend on shoes?",
+      "sampleAnswer": "I’d say I usually spend a moderate amount, maybe a couple of hundred yuan per pair. I tend to look for good value, because I’d rather buy fewer but better pairs.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "Which do you prefer, fashionable or comfortable shoes?",
+      "sampleAnswer": "If I had to choose, I’d go with comfortable shoes, because I’m on my feet a lot during the day. Fashion matters, but a painful pair is not worth it.",
+      "perspective": "思路一"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "I’d say I quite enjoy buying shoes, and I probably do it every couple of months. I like trying them on and finding a pair that both looks good and feels comfortable.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "every couple of months",
+      "pos": "adv. phr.",
+      "chinese": "每隔两三个月",
+      "exampleSentence": "I probably buy new shoes every couple of months when the seasons change.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-shoes-mvs3wp8j"
+    },
+    {
+      "id": "sv-2",
+      "term": "look for good value",
+      "pos": "v. phr.",
+      "chinese": "注重性价比 / 物有所值",
+      "exampleSentence": "I tend to look for good value, because I’d rather buy fewer but better pairs.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-shoes-mvs3wp8j"
+    },
+    {
+      "id": "sv-3",
+      "term": "on one's feet",
+      "pos": "idiom",
+      "chinese": "整天站着或奔波走动",
+      "exampleSentence": "I need supportive sneakers since I'm on my feet a lot during the day.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-shoes-mvs3wp8j"
+    },
+    {
+      "id": "sv-4",
+      "term": "not worth it",
+      "pos": "adj. phr.",
+      "chinese": "不划算 / 不值得",
+      "exampleSentence": "Fashion matters, but suffering in a painful pair is simply not worth it.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-shoes-mvs3wp8j"
+    },
+    {
+      "id": "sv-5",
+      "term": "moderate amount",
+      "pos": "n. phr.",
+      "chinese": "适中的开销 / 金额",
+      "exampleSentence": "I usually spend a moderate amount of money rather than chasing luxury labels.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-shoes-mvs3wp8j"
+    }
+  ],
+  "mindMap": {
+    "label": "Shoes & Daily Choices",
+    "children": [
+      {
+        "label": "Shopping Habits & Frequency",
+        "children": [
+          {
+            "label": "Browsing and trying on fit",
+            "children": []
+          },
+          {
+            "label": "Refreshing every couple of months",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "E-Commerce Experiences",
+        "children": [
+          {
+            "label": "Purchasing sports shoes via apps",
+            "children": []
+          },
+          {
+            "label": "Lower price balanced with delivery wait",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Budget Philosophy",
+        "children": [
+          {
+            "label": "Spending moderate amounts",
+            "children": []
+          },
+          {
+            "label": "Prioritizing value: fewer but durable pairs",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Comfort vs Style",
+        "children": [
+          {
+            "label": "Prioritizing ergonomic support",
+            "children": []
+          },
+          {
+            "label": "Painful fashionable footwear is not worth it",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=900&auto=format&fit=crop&q=80",
+      "caption": "Sneakers and Diverse Daily Footwear"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=900&auto=format&fit=crop&q=80",
+      "caption": "Fashion Footwear vs Everyday Comfort"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=900&auto=format&fit=crop&q=80",
+      "caption": "Minimalist Street Footwear Culture"
+    }
+  ]
+}

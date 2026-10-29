@@ -1,0 +1,136 @@
+{
+  "id": "spk-cam19-wetland-research",
+  "title": "Wetland research",
+  "part": "Part 2 & 3",
+  "topicCategory": "学术研究与环境类",
+  "questionPrompt": "Part 2: Describe an environmental project you have learned about. You should say where it took place, what the project aimed to do, what methods were used, and explain why you think the project was useful.\n\nPart 3: Why are wetlands important? How can local communities contribute to conservation? Should environmental projects be monitored over a long period?",
+  "cueCardPoints": [
+    "Where the project took place",
+    "What the project aimed to do",
+    "What methods the students used",
+    "Why the project was useful"
+  ],
+  "audioUrl": "/audio/spk-cam19-wetland-research.mp3",
+  "sampleAnswer": "I'd like to describe a wetland restoration project at North Marsh that I learned about from a university research discussion. The site was chosen because it connects a river with several smaller ponds, so it provides a variety of habitats. The students carried out fieldwork, recording water levels and plant cover, and they compared their results with data from the previous year. They also used a control pond because the rainfall was unusually high that season. One particularly encouraging finding was an increase in dragonflies, although the researchers were careful not to confuse correlation with evidence of cause. Local volunteers also helped identify native species and remove litter. I think the project was valuable because it combined careful monitoring with community involvement. Wetlands support biodiversity, absorb excess water and provide habitats for wildlife, so restoring them can have long-term benefits. The results also showed that environmental work needs patience: a single survey cannot explain every change. Overall, it struck a balance between scientific evidence and practical action, and I hope the monitoring will continue in the future.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "wetland restoration",
+      "pos": "n. phr.",
+      "chinese": "湿地修复",
+      "topicCategory": "学术研究与环境类",
+      "exampleSentence": "The wetland restoration project took place at North Marsh.",
+      "sourceTestId": "spk-cam19-wetland-research"
+    },
+    {
+      "id": "sv-2",
+      "term": "carry out fieldwork",
+      "pos": "v. phr.",
+      "chinese": "开展实地调查",
+      "topicCategory": "学术研究与环境类",
+      "exampleSentence": "The students carried out fieldwork by recording water levels and plant cover.",
+      "sourceTestId": "spk-cam19-wetland-research"
+    },
+    {
+      "id": "sv-3",
+      "term": "native species",
+      "pos": "n. phr.",
+      "chinese": "本地物种",
+      "topicCategory": "学术研究与环境类",
+      "exampleSentence": "Local volunteers helped identify native species.",
+      "sourceTestId": "spk-cam19-wetland-research"
+    },
+    {
+      "id": "sv-4",
+      "term": "long-term benefits",
+      "pos": "n. phr.",
+      "chinese": "长期益处",
+      "topicCategory": "学术研究与环境类",
+      "exampleSentence": "Restoring wetlands can have long-term benefits.",
+      "sourceTestId": "spk-cam19-wetland-research"
+    },
+    {
+      "id": "sv-5",
+      "term": "community involvement",
+      "pos": "n. phr.",
+      "chinese": "社区参与",
+      "topicCategory": "学术研究与环境类",
+      "exampleSentence": "The project combined careful monitoring with community involvement.",
+      "sourceTestId": "spk-cam19-wetland-research"
+    },
+    {
+      "id": "sv-6",
+      "term": "distinguish correlation from causation",
+      "pos": "v. phr.",
+      "chinese": "区分相关性与因果关系",
+      "topicCategory": "学术研究与环境类",
+      "exampleSentence": "Researchers should distinguish correlation from causation.",
+      "sourceTestId": "spk-cam19-wetland-research"
+    }
+  ],
+  "mindMap": {
+    "label": "North Marsh Wetland Restoration Project",
+    "children": [
+      {
+        "label": "Site and Purpose",
+        "children": [
+          {
+            "label": "River linked to smaller ponds"
+          },
+          {
+            "label": "A range of habitats to restore"
+          }
+        ]
+      },
+      {
+        "label": "Research Methods",
+        "children": [
+          {
+            "label": "Recorded water levels and plant cover"
+          },
+          {
+            "label": "Compared findings with the previous year"
+          },
+          {
+            "label": "Used a control pond during unusually high rainfall"
+          }
+        ]
+      },
+      {
+        "label": "Findings and Reflection",
+        "children": [
+          {
+            "label": "Dragonflies increased"
+          },
+          {
+            "label": "Separated correlation from causation"
+          },
+          {
+            "label": "Combined monitoring with community involvement"
+          }
+        ]
+      },
+      {
+        "label": "Long-Term Value",
+        "children": [
+          {
+            "label": "Support biodiversity and wildlife habitats"
+          },
+          {
+            "label": "Continue monitoring environmental change"
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=900&auto=format&fit=crop&q=80",
+      "caption": "Wetland Ecology & River System"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=900&auto=format&fit=crop&q=80",
+      "caption": "Environmental Fieldwork & Monitoring"
+    }
+  ]
+}

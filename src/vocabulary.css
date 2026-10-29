@@ -1,0 +1,119 @@
+.vocabulary-studio{padding:2px 0 34px}
+.vocabulary-heading{display:flex;align-items:end;justify-content:space-between;margin:13px 0 20px}
+.vocabulary-heading h2{margin:5px 0 0;font-size:19px;font-weight:600}
+.vocabulary-total,.flashcard-counter,.spelling-counter{color:var(--muted);font-family:var(--mono);font-size:9px;letter-spacing:.6px}
+.vocabulary-heading-actions{display:flex;align-items:center;gap:12px}
+.vocabulary-display-modes{display:flex;flex-wrap:wrap;gap:4px}
+.vocabulary-display-modes button{min-height:29px;padding:0 9px;border:1px solid var(--line);background:var(--paper);color:var(--muted);font-size:9px;cursor:pointer}
+.vocabulary-display-modes button.active{border-color:var(--green);background:var(--green);color:#fff}
+.vocabulary-toolbar{display:grid;gap:13px;margin-bottom:22px}
+.vocabulary-mode-tabs,.spelling-mode-tabs{display:flex;align-items:center;gap:3px;border-bottom:1px solid var(--line)}
+.vocabulary-mode-tabs button,.spelling-mode-tabs button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:39px;padding:0 12px;border:0;background:transparent;color:var(--muted);font-size:11px;cursor:pointer}
+.vocabulary-mode-tabs button.active,.spelling-mode-tabs button.active{position:relative;color:var(--green);font-weight:600}
+.vocabulary-mode-tabs button.active:after,.spelling-mode-tabs button.active:after{position:absolute;right:8px;bottom:-1px;left:8px;height:2px;background:var(--green);content:''}
+.vocabulary-filters{display:flex;gap:9px;align-items:center}
+.vocabulary-search{display:flex;align-items:center;gap:8px;min-width:220px;flex:1;padding:0 11px;border:1px solid var(--line);background:var(--paper);color:var(--muted)}
+.vocabulary-search input{width:100%;height:37px;border:0;outline:0;background:transparent;color:var(--ink);font-size:11px}
+.vocabulary-filters select{min-width:190px;height:39px;padding:0 10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:11px}
+.spelling-mode-tabs{width:max-content;max-width:100%;border:1px solid var(--line);background:var(--paper)}
+.spelling-mode-tabs button{min-height:34px}
+.spelling-mode-tabs button.active:after{right:0;bottom:0;left:0}
+.vocabulary-groups{display:grid;gap:27px}
+.vocabulary-group{border-top:1px solid var(--line)}
+.vocabulary-group-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.vocabulary-group-heading>div:first-child{display:flex;align-items:center;gap:9px;min-width:0}
+.vocabulary-group-heading h3{margin:0;font-size:14px;font-weight:600}
+.vocabulary-group-heading>div:first-child>span:last-child{color:var(--muted);font-family:var(--mono);font-size:9px}
+.category-actions{display:flex;gap:7px}
+.category-actions button{display:inline-flex;align-items:center;gap:6px;min-height:31px;padding:0 9px;border:1px solid var(--line);background:var(--paper);color:var(--green);font-size:10px;cursor:pointer}
+.category-actions button:hover{border-color:#9bb79f;background:#f2f5e9}
+.vocabulary-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.vocabulary-row{min-width:0;padding:14px 15px;border:1px solid var(--line);background:var(--paper)}
+.vocabulary-display-chinese .vocabulary-row,.vocabulary-display-english .vocabulary-row{cursor:pointer}
+.vocabulary-row-term{display:flex;align-items:center;gap:8px}
+.vocabulary-row-term h4{margin:0;font-size:16px;font-weight:600;overflow-wrap:anywhere}
+.vocabulary-row-term>span{padding:3px 6px;background:#f0f1eb;color:var(--muted);font-family:var(--mono);font-size:9px;white-space:nowrap}
+.vocabulary-row-term button{display:grid;place-items:center;width:29px;height:29px;margin-left:auto;border:1px solid var(--line);background:#fff;color:var(--green);cursor:pointer}
+.vocabulary-meaning{margin:8px 0 0;color:var(--muted);font-size:12px}
+.vocabulary-row blockquote{margin:12px 0 0;padding-left:10px;border-left:2px solid #b7c7a0;color:#454a42;font-size:11px;line-height:1.55}
+.vocabulary-row-meta{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-top:13px;color:var(--green);font-size:10px}
+.vocabulary-row-meta small{max-width:58%;color:var(--muted);font-size:9px;text-align:right;overflow-wrap:anywhere}
+.flashcard-stage,.spelling-stage{display:flex;min-height:405px;flex-direction:column;align-items:center;justify-content:center;padding:20px;border:1px solid var(--line);background:var(--paper)}
+.flashcard-counter,.spelling-counter{align-self:flex-end;margin-bottom:11px}
+.flashcard{display:grid;width:min(100%,560px);min-height:242px;place-items:center;padding:22px;border:1px solid #dfe2d8;background:#fff;text-align:center;transition:background-color .2s,border-color .2s}
+.flashcard:hover{border-color:#9bb79f}
+.flashcard-flip{display:grid;width:100%;min-height:175px;place-items:center;padding:6px;border:0;background:transparent;text-align:center;cursor:pointer}
+.flashcard-flip:focus-visible{outline:2px solid #9bb79f;outline-offset:2px}
+.flashcard-face{display:flex;max-width:100%;flex-direction:column;align-items:center;gap:11px}
+.flashcard-kicker,.spelling-kicker{color:var(--muted);font-family:var(--mono);font-size:9px;letter-spacing:1px}
+.flashcard-face>strong{font-size:27px;font-weight:600;overflow-wrap:anywhere}
+.flashcard-pos{color:var(--muted);font-family:var(--mono);font-size:10px}
+.flashcard-speak{display:inline-flex;align-items:center;gap:7px;margin-top:8px;border:0;background:transparent;color:var(--green);font-size:11px;cursor:pointer}
+.flashcard-meaning{font-size:19px!important}
+.flashcard-example{max-width:440px;color:#484d45;font-size:12px;line-height:1.6}
+.flashcard-category{padding:5px 8px;background:#f0f2e9;color:var(--green);font-size:10px}
+.flashcard-status{height:29px;padding-top:9px;color:var(--muted);font-size:10px}
+.mastery-badge{padding:4px 7px}
+.mastery-badge.mastered{background:#e6f0e6;color:#316a4e}
+.mastery-badge.review{background:#f5ebd8;color:#8b6928}
+.flashcard-actions{display:flex;gap:8px;margin:10px 0}
+.flashcard-actions button,.flashcard-navigation button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:0 12px;border:1px solid var(--line);background:#fff;font-size:11px;cursor:pointer}
+.flashcard-actions .review-action{color:#86682e}
+.flashcard-actions .mastered-action{border-color:var(--green);background:var(--green);color:#fff}
+.flashcard-navigation{display:flex;gap:8px;margin-top:5px}
+.flashcard-navigation button{width:38px;padding:0}
+.spelling-stage{align-items:stretch;min-height:405px;padding:24px clamp(18px,5vw,55px)}
+.spelling-prompt{display:flex;min-height:118px;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
+.spelling-prompt>strong{font-size:20px;font-weight:600;line-height:1.5}
+.spelling-audio{display:inline-flex;align-items:center;gap:9px;min-height:42px;padding:0 13px;border:1px solid var(--green);background:var(--green);color:#fff;font-size:12px;cursor:pointer}
+.spelling-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin:13px auto 0;width:min(100%,590px)}
+.spelling-form label{grid-column:1 / -1;color:var(--muted);font-size:10px}
+.spelling-form input{min-width:0;height:41px;padding:0 11px;border:1px solid var(--line);background:#fff;font-size:13px}
+.spelling-form input:focus{outline:2px solid #9bb79f;outline-offset:1px}
+.spelling-form>button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:41px;padding:0 13px;border:0;background:var(--green);color:#fff;font-size:11px;cursor:pointer}
+.spelling-form>button:disabled{background:#a9aea3;cursor:not-allowed}
+.spelling-result{display:flex;align-items:center;gap:8px;width:min(100%,590px);margin:13px auto 0;padding:10px 12px;font-size:11px}
+.spelling-result.correct{background:#eaf1e8;color:#316a4e}
+.spelling-result.incorrect{flex-wrap:wrap;background:#f8eee9;color:#9a4d37}
+.spelling-result>button,.spelling-result .spelling-next{display:inline-flex;align-items:center;gap:4px;margin-left:auto;border:0;background:transparent;color:inherit;font-size:10px;cursor:pointer}
+.spelling-comparison{display:flex;align-items:center;gap:8px;min-width:0;margin-left:auto;overflow-wrap:anywhere}
+.spelling-comparison span{text-decoration:line-through}
+.spelling-comparison b{color:#316a4e;overflow-wrap:anywhere}
+.spelling-result .add-review-word{display:inline-flex;align-items:center;gap:5px;margin-left:0;border:1px solid #d6c7bc;padding:5px 7px;background:#fff;color:#79533f}
+.spelling-result .spelling-next{margin-left:auto}
+.spelling-topic{display:flex;justify-content:space-between;gap:10px;margin-top:17px;color:var(--green);font-size:10px}
+.spelling-topic span{color:var(--muted);text-align:right}
+.vocabulary-empty{margin:0;color:var(--muted);font-size:12px}
+
+@media(max-width:680px){
+  .vocabulary-heading h2{font-size:16px}
+  .vocabulary-mode-tabs{width:100%;justify-content:space-between}
+  .vocabulary-mode-tabs button{gap:5px;padding:0 7px;font-size:10px}
+  .vocabulary-filters{align-items:stretch;flex-direction:column}
+  .vocabulary-filters select{width:100%}
+  .vocabulary-group-heading{align-items:flex-start;flex-direction:column}
+  .category-actions{width:100%}
+  .category-actions button{flex:1;justify-content:center}
+  .vocabulary-list{grid-template-columns:1fr}
+  .vocabulary-row{padding:12px}
+  .vocabulary-row-term h4{font-size:15px}
+  .flashcard-stage,.spelling-stage{min-height:370px;padding:15px}
+  .flashcard{min-height:220px;padding:15px}
+  .flashcard-face>strong{font-size:22px}
+  .spelling-form{grid-template-columns:1fr}
+  .spelling-form label{grid-column:1}
+  .spelling-form>button{width:100%}
+  .spelling-result{align-items:flex-start;flex-wrap:wrap}
+  .spelling-comparison{margin-left:0}
+  .spelling-topic{font-size:9px}
+}
+
+.vocabulary-group-heading>div:first-child>input{width:min(260px,45vw);height:32px;padding:0 8px;border:1px solid #9bb79f;background:#fff;color:var(--ink);font:inherit}
+.vocabulary-group-heading>div:first-child>button,.vocabulary-row-meta>button,.vocabulary-word-editor button{display:inline-flex;align-items:center;gap:5px;min-height:30px;padding:0 8px;border:1px solid var(--line);background:#fff;color:var(--green);font-size:10px;cursor:pointer}
+.vocabulary-row-meta>button{min-height:25px;padding:0;border:0;background:transparent;text-align:left}
+.vocabulary-word-editor{display:grid;gap:8px;margin-top:10px;padding:11px;border:1px solid #d8ded5;background:#f7f8f3}
+.vocabulary-word-editor label{display:grid;gap:5px;color:var(--muted);font-size:10px}
+.vocabulary-word-editor input,.vocabulary-word-editor select{min-width:0;min-height:34px;padding:0 8px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:11px}
+.vocabulary-word-editor>div{display:flex;flex-wrap:wrap;gap:6px}
+.vocabulary-word-editor .vocabulary-delete-word{border-color:#dfc9c1;color:#9e5a47}
+.vocabulary-edit-error{padding:9px 12px;border:1px solid #dfc9c1;background:#fff8f5;color:#9e5a47;font-size:12px}

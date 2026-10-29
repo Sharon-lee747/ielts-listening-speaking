@@ -1,0 +1,99 @@
+{
+  "id": "spk-part1-art-galleries",
+  "title": "Art & Galleries",
+  "part": "Part 1",
+  "topicCategory": "艺术与文化",
+  "questionPrompt": "Art & Galleries",
+  "questions": [
+    {
+      "question": "Do you enjoy visiting art galleries?",
+      "sampleAnswer": "Yes, I do, especially when I have a free afternoon. I like seeing how artists use colour and light, and a quiet gallery gives me time to look at each piece without feeling rushed.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "When did you last visit an art gallery?",
+      "sampleAnswer": "I went to a small gallery in my city a few months ago. It was hosting an exhibition by local artists, so I got to see paintings of familiar streets and landmarks from a completely different perspective.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "Would you like to have a painting in your home?",
+      "sampleAnswer": "Definitely. I would choose something simple and calming, perhaps a landscape in soft colours. It would make the room feel more personal, and I think original artwork can be a good conversation starter.",
+      "perspective": "思路三"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "Yes, I do, especially when I have a free afternoon. I like seeing how artists use colour and light, and a quiet gallery gives me time to look at each piece without feeling rushed.",
+  "vocabulary": [
+    {
+      "id": "sv-art-1",
+      "term": "a different perspective",
+      "pos": "n. phr.",
+      "chinese": "不同的视角",
+      "topicCategory": "艺术与文化",
+      "exampleSentence": "The exhibition showed familiar streets from a different perspective.",
+      "sourceTestId": "spk-part1-art-galleries"
+    },
+    {
+      "id": "sv-art-2",
+      "term": "a conversation starter",
+      "pos": "n. phr.",
+      "chinese": "引发交谈的话题",
+      "topicCategory": "艺术与文化",
+      "exampleSentence": "Original artwork can be a good conversation starter.",
+      "sourceTestId": "spk-part1-art-galleries"
+    }
+  ],
+  "mindMap": {
+    "label": "Art and Galleries",
+    "children": [
+      {
+        "label": "Personal Interest",
+        "children": [
+          {
+            "label": "Enjoy a quiet afternoon visit"
+          },
+          {
+            "label": "Notice colour and light"
+          }
+        ]
+      },
+      {
+        "label": "Recent Visit",
+        "children": [
+          {
+            "label": "Local artists exhibition"
+          },
+          {
+            "label": "Familiar places from a new perspective"
+          }
+        ]
+      },
+      {
+        "label": "Artwork at Home",
+        "children": [
+          {
+            "label": "Choose a calming landscape"
+          },
+          {
+            "label": "Make a room feel personal"
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=900&auto=format&fit=crop&q=80",
+      "caption": "Classical Gallery & Oil Paintings"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=900&auto=format&fit=crop&q=80",
+      "caption": "Sculpture Hall & Ambient Light"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=900&auto=format&fit=crop&q=80",
+      "caption": "Modern Museum Architecture"
+    }
+  ]
+}

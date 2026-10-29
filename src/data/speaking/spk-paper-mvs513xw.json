@@ -1,0 +1,159 @@
+{
+  "id": "spk-paper-mvs513xw",
+  "title": "Paper",
+  "part": "Part 1",
+  "topicCategory": "艺术与文化",
+  "questionPrompt": "Paper",
+  "questions": [
+    {
+      "question": "Have you made any crafts with paper?",
+      "sampleAnswer": "Yes, I have. I remember making paper boats and simple origami when I was a child. It was when I was about seven, and I felt really proud of each little thing I made.",
+      "perspective": "思路三"
+    },
+    {
+      "question": "Do you still write physical letters?",
+      "sampleAnswer": "Actually, I don’t really write physical letters anymore. I used to, but now I just send messages or emails, because they’re instant and free.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "Do people still keep handwritten letters today?",
+      "sampleAnswer": "I’d say nowadays fewer people keep handwritten letters, because most messages are digital. But some people still treasure old letters as memories, and young people sometimes write them for special occasions. So it’s rare but not gone.",
+      "perspective": "思路四"
+    },
+    {
+      "question": "Do you carry paper and pens with you when you go out?",
+      "sampleAnswer": "Not usually, to be honest. I tend to rely on my phone for notes and reminders, so I rarely carry paper and pens, unless I’m going to a class where I need them.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "What did you like to do with paper as a child?",
+      "sampleAnswer": "I can still remember I loved drawing and cutting paper into shapes. I used to fold paper airplanes and race them with my friends, which was one of my favourite pastimes.",
+      "perspective": "思路三"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "Yes, I have. I remember making paper boats and simple origami when I was a child. It was when I was about seven, and I felt really proud of each little thing I made.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "simple origami",
+      "pos": "n. phr.",
+      "chinese": "简单的折纸手艺",
+      "exampleSentence": "I remember making paper boats and simple origami when I was a child.",
+      "topicCategory": "艺术与文化",
+      "sourceTestId": "spk-paper-mvs513xw"
+    },
+    {
+      "id": "sv-2",
+      "term": "physical letters",
+      "pos": "n. phr.",
+      "chinese": "纸质/实体信件",
+      "exampleSentence": "I rarely write physical letters nowadays because texting is instant and free.",
+      "topicCategory": "艺术与文化",
+      "sourceTestId": "spk-paper-mvs513xw"
+    },
+    {
+      "id": "sv-3",
+      "term": "treasure ... as memories",
+      "pos": "v. phr.",
+      "chinese": "作为回忆珍藏/保存",
+      "exampleSentence": "Some people still treasure old handwritten letters as sweet memories.",
+      "topicCategory": "艺术与文化",
+      "sourceTestId": "spk-paper-mvs513xw"
+    },
+    {
+      "id": "sv-4",
+      "term": "rely on one's phone for notes",
+      "pos": "v. phr.",
+      "chinese": "依靠手机记笔记和备忘",
+      "exampleSentence": "I tend to rely on my phone for notes and reminders when I am out.",
+      "topicCategory": "艺术与文化",
+      "sourceTestId": "spk-paper-mvs513xw"
+    },
+    {
+      "id": "sv-5",
+      "term": "cut paper into shapes",
+      "pos": "v. phr.",
+      "chinese": "将纸剪成各种形状/剪纸",
+      "exampleSentence": "As a child, I loved drawing and cutting paper into shapes with safety scissors.",
+      "topicCategory": "艺术与文化",
+      "sourceTestId": "spk-paper-mvs513xw"
+    }
+  ],
+  "mindMap": {
+    "label": "Paper & Handwriting in Digital Era",
+    "children": [
+      {
+        "label": "Childhood Crafts & Play",
+        "children": [
+          {
+            "label": "Folding paper boats and airplanes",
+            "children": []
+          },
+          {
+            "label": "Simple origami and cutting shapes",
+            "children": []
+          },
+          {
+            "label": "Airplane flying competitions",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Digital Transition",
+        "children": [
+          {
+            "label": "Instant messaging replaces postal mail",
+            "children": []
+          },
+          {
+            "label": "Convenience of zero cost communication",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Daily Habits on the Move",
+        "children": [
+          {
+            "label": "Phone memos replacing pocket notebooks",
+            "children": []
+          },
+          {
+            "label": "Stationery reserved for formal classes",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Sentimental Significance",
+        "children": [
+          {
+            "label": "Handwritten notes as emotional keepsakes",
+            "children": []
+          },
+          {
+            "label": "Cards for milestones and festivals",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=900&auto=format&fit=crop&q=80",
+      "caption": "Handmade Craft Sheets and Textured Paper"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=900&auto=format&fit=crop&q=80",
+      "caption": "Vintage Fountain Pen and Handwritten Journal"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=900&auto=format&fit=crop&q=80",
+      "caption": "Delicate Origami Cranes and Paper Crafts"
+    }
+  ]
+}

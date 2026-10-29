@@ -1,0 +1,150 @@
+{
+  "id": "spk-secondary-school-mvrw30it",
+  "title": "Secondary school",
+  "part": "Part 1",
+  "topicCategory": "教育与成长经历",
+  "questionPrompt": "Secondary school",
+  "questions": [
+    {
+      "question": "Do you remember your first day at secondary school?",
+      "sampleAnswer": "Yes, I do. It was when I was about twelve, and I remember feeling nervous because everything was new. What struck me most was how big the school was compared to primary school.",
+      "perspective": "思路三"
+    },
+    {
+      "question": "Were there any subjects you found difficult at secondary school?",
+      "sampleAnswer": "Yes, there were. I found maths quite difficult, especially the algebra part. I remember staying after class for extra help, and eventually I managed to catch up.",
+      "perspective": "思路三"
+    },
+    {
+      "question": "What was your favorite subject at secondary school?",
+      "sampleAnswer": "If I had to pick one, I’d say history, because I love the stories behind real events. It’s like a great movie that actually happened, and that’s what made it my favourite.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "Is there anything you miss about your secondary school?",
+      "sampleAnswer": "Yes, I do miss it. I can still remember the lively classroom discussions and my friends at lunchtime. What I miss most is the simple feeling of being together every day.",
+      "perspective": "思路三"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "Yes, I do. It was when I was about twelve, and I remember feeling nervous because everything was new. What struck me most was how big the school was compared to primary school.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "what struck me most",
+      "pos": "idiom",
+      "chinese": "最触动/令我印象深刻的是",
+      "exampleSentence": "What struck me most was how big the school was compared to primary school.",
+      "topicCategory": "教育与成长经历",
+      "sourceTestId": "spk-secondary-school-mvrw30it"
+    },
+    {
+      "id": "sv-2",
+      "term": "stay after class for extra help",
+      "pos": "v. phr.",
+      "chinese": "课后留下来寻求额外辅导",
+      "exampleSentence": "I remember staying after class for extra help, and eventually I managed to catch up.",
+      "topicCategory": "教育与成长经历",
+      "sourceTestId": "spk-secondary-school-mvrw30it"
+    },
+    {
+      "id": "sv-3",
+      "term": "stories behind real events",
+      "pos": "n. phr.",
+      "chinese": "真实事件背后的故事",
+      "exampleSentence": "I love history because of the fascinating stories behind real events.",
+      "topicCategory": "教育与成长经历",
+      "sourceTestId": "spk-secondary-school-mvrw30it"
+    },
+    {
+      "id": "sv-4",
+      "term": "lively classroom discussions",
+      "pos": "n. phr.",
+      "chinese": "热烈生动的课堂讨论",
+      "exampleSentence": "I can still remember the lively classroom discussions and my friends at lunchtime.",
+      "topicCategory": "教育与成长经历",
+      "sourceTestId": "spk-secondary-school-mvrw30it"
+    },
+    {
+      "id": "sv-5",
+      "term": "the simple feeling of being together",
+      "pos": "n. phr.",
+      "chinese": "每天聚在一起那种纯粹简单的感觉",
+      "exampleSentence": "What I miss most is the simple feeling of being together every day.",
+      "topicCategory": "教育与成长经历",
+      "sourceTestId": "spk-secondary-school-mvrw30it"
+    }
+  ],
+  "mindMap": {
+    "label": "Secondary School Memories",
+    "children": [
+      {
+        "label": "First Impressions",
+        "children": [
+          {
+            "label": "Feeling nervous about the unknown",
+            "children": []
+          },
+          {
+            "label": "Massive campus compared to primary school",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Academic Challenges",
+        "children": [
+          {
+            "label": "Difficulties in algebra and maths",
+            "children": []
+          },
+          {
+            "label": "Staying after class to catch up",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Favorite Subject",
+        "children": [
+          {
+            "label": "Fondness for history",
+            "children": []
+          },
+          {
+            "label": "Real events as engaging stories",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Nostalgia & Missing Elements",
+        "children": [
+          {
+            "label": "Lively classroom debates",
+            "children": []
+          },
+          {
+            "label": "Lunchtime bonding with friends",
+            "children": []
+          },
+          {
+            "label": "Simple joy of daily companionship",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&auto=format&fit=crop&q=80",
+      "caption": "Secondary School Corridor and Classrooms"
+    },
+    {
+      "url": "https://ts2.tc.mm.bing.net/th/id/OIP-C.otS_FI49A-XpbqVphju0dQHaDr?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "caption": "Secondary school  life"
+    }
+  ]
+}
