@@ -1,6 +1,6 @@
 import SpeakingExamSimulator from './SpeakingExamSimulator.jsx'
 import QuickTestFinder from './QuickTestFinder.jsx'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { BookOpen, Check, ChevronDown, Clipboard, Download, FilePlus2, Headphones, Mic2, Plus, Sparkles, Trash2, Upload, Volume2, X } from 'lucide-react'
 import MindMap from './MindMap.jsx'
 import { getSpeakingTitle, sortByEnglishTitle } from '../data/lessonIndex.js'
@@ -142,6 +142,91 @@ export const PART23_FULL_TEMPLATE = {
   },
 }
 
+export const PART2_FULL_TEMPLATE = {
+  title: 'A Memorable Journey',
+  part: 'Part 2',
+  topicCategory: '旅行与探索',
+  questionPrompt: 'Describe a memorable journey you took by public transport.',
+  cueCardPoints: [
+    'Where you went and when',
+    'What transport you took',
+    'Who accompanied you',
+    'Why the experience was memorable',
+  ],
+  sampleAnswer: PART23_FULL_TEMPLATE.sampleAnswer,
+  vocabulary: PART23_FULL_TEMPLATE.vocabulary,
+  mindMap: PART23_FULL_TEMPLATE.mindMap,
+}
+
+export const PART3_FULL_TEMPLATE = {
+  title: 'Urban Mobility & Public Transit',
+  part: 'Part 3',
+  topicCategory: '旅行与探索',
+  questions: [
+    {
+      question: 'Why is public transport vital for modern metropolitan areas?',
+      sampleAnswer: 'Public transport serves as the circulatory system of any modern metropolis. Reliable subway and bus networks drastically reduce vehicular emissions, alleviate rush-hour congestion, and provide equitable mobility for low-income commuters who cannot afford private car ownership.',
+      perspective: '思路一',
+    },
+    {
+      question: 'How might technological advancements transform future commuting experiences?',
+      sampleAnswer: 'Autonomous electric transit pods and real-time AI-optimized route scheduling will likely eliminate bottleneck delays. Commuters will transition from passive waiting to enjoying seamless, on-demand micro-mobility connected to central rapid transit hubs.',
+      perspective: '思路二',
+    },
+    {
+      question: 'Should governments prioritize subsidizing rural transit over high-speed urban rail?',
+      sampleAnswer: 'A balanced approach is indispensable. While high-speed rail accelerates inter-city economic synergy, rural transit subsidies prevent geographic isolation and ensure rural residents maintain access to specialized medical healthcare and tertiary education.',
+      perspective: '思路三',
+    },
+  ],
+  vocabulary: [
+    {
+      term: 'circulatory system of the metropolis',
+      pos: 'n. phr.',
+      chinese: '大都市的血液循环系统/生命线',
+      exampleSentence: 'Public transport acts as the circulatory system of any modern metropolis.',
+    },
+    {
+      term: 'equitable mobility',
+      pos: 'n. phr.',
+      chinese: '公平包容的出行权利',
+      exampleSentence: 'Subway networks provide equitable mobility for all social demographics.',
+    },
+    {
+      term: 'alleviate rush-hour congestion',
+      pos: 'v. phr.',
+      chinese: '缓解高峰期交通拥堵',
+      exampleSentence: 'Effective rail networks significantly alleviate rush-hour congestion.',
+    },
+  ],
+  mindMap: {
+    label: 'Urban Mobility and Future Transit',
+    children: [
+      {
+        label: 'Metropolitan Benefits',
+        children: [
+          { label: 'Emissions and congestion relief' },
+          { label: 'Equitable civic accessibility' },
+        ],
+      },
+      {
+        label: 'Technological Evolution',
+        children: [
+          { label: 'Autonomous and AI dispatching' },
+          { label: 'On-demand micro-mobility' },
+        ],
+      },
+      {
+        label: 'Public Investment Balance',
+        children: [
+          { label: 'Inter-city high-speed synergy' },
+          { label: 'Rural connectivity and health access' },
+        ],
+      },
+    ],
+  },
+}
+
 function slug(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || `speaking-${Date.now()}`
 }
@@ -271,7 +356,7 @@ export function parsePastedSnippet(rawInput) {
             perspective: PERSPECTIVE_OPTIONS.includes(item.perspective) ? item.perspective : (item.perspective || PERSPECTIVE_OPTIONS[idx % 4]),
           })).filter((item) => item.question || item.sampleAnswer)
           result.part = 'Part 1'
-          recognized.push(`Part 1 分问题与范文 (${result.questions.length}题)`)
+          recognized.push(`分问题与范文 (${result.questions.length}题)`)
         }
       } else if ('url' in first || ('src' in first)) {
           result.images = jsonParsed.map((img, idx) => ({
@@ -319,8 +404,8 @@ export function parsePastedSnippet(rawInput) {
         sampleAnswer: String(item.sampleAnswer || item.answer || '').trim(),
         perspective: PERSPECTIVE_OPTIONS.includes(item.perspective) ? item.perspective : (item.perspective || PERSPECTIVE_OPTIONS[idx % 4]),
       })).filter((item) => item.question || item.sampleAnswer)
-      recognized.push(`Part 1 分问题与范文 (${result.questions.length}题)`)
-      if (!result.part) result.part = 'Part 1'
+      recognized.push(`分问题与范文 (${result.questions.length}题)`)
+      if (!result.part) result.part = jsonParsed.part || 'Part 1'
     }
 
     if (jsonParsed.cueCardPoints) {
@@ -473,12 +558,12 @@ function speak(term) {
   window.speechSynthesis.speak(utterance)
 }
 
-function flattenMindMap(node, depth = 0) {
+export function flattenMindMap(node, depth = 0) {
   if (!node || !node.label) return ''
   return [`${'  '.repeat(depth)}- ${node.label}`, ...(node.children ?? []).flatMap((child) => flattenMindMap(child, depth + 1))].join('\n')
 }
 
-function parseMindMapOutline(text, rootLabel) {
+export function parseMindMapOutline(text, rootLabel) {
   const lines = text.split(/\r?\n/).map((line) => {
     const match = line.match(/^(\s*)(?:[-*+]|\d+[.)])?\s*(.+?)\s*$/)
     return match?.[2] ? { depth: Math.floor(match[1].replace(/\t/g, '  ').length / 2), label: match[2] } : null
@@ -509,39 +594,6 @@ const emptyLesson = {
   vocabulary: [],
   mindMap: { label: 'Speaking Outline', children: [] },
   images: [],
-}
-
-function asSet(lesson, label = 'Set 1', id = 'set-1') {
-  return {
-    id,
-    label,
-    part: lesson.part,
-    topicCategory: lesson.topicCategory,
-    questionPrompt: lesson.questionPrompt,
-    questions: lesson.questions ?? [],
-    cueCardPoints: lesson.cueCardPoints ?? [],
-    sampleAnswer: lesson.sampleAnswer ?? '',
-    vocabulary: lesson.vocabulary ?? [],
-    mindMap: lesson.mindMap,
-    audioUrl: lesson.audioUrl ?? '',
-    images: lesson.images ?? [],
-  }
-}
-
-function prepareSets(sets, ownerId) {
-  return sets.map((set) => ({
-    ...set,
-    vocabulary: (set.vocabulary ?? []).map((item, index) => ({
-      ...item,
-      id: `${slug(set.id || set.label)}-${index + 1}`,
-      sourceTestId: ownerId,
-      topicCategory: item.topicCategory || set.topicCategory,
-    })),
-  }))
-}
-
-function getLessonSets(lesson) {
-  return lesson?.sets?.length ? lesson.sets : []
 }
 
 function PartOneContent({ lesson, revealedAnswers, onToggleAnswer }) {
@@ -808,25 +860,75 @@ function TopicVisualGallery({ images = [] }) {
   )
 }
 
+function parsePromptParts(promptText, cuePoints = []) {
+  if (!promptText) return { prompt: '', points: cuePoints || [] }
+  let text = String(promptText).trim()
+
+  const part3Idx = text.search(/\n\s*Part\s*3\s*[:：]/i)
+  if (part3Idx >= 0) {
+    text = text.substring(0, part3Idx).trim()
+  }
+
+  const sayMatch = text.match(/(?:you\s+should\s+say|提纲要点)\s*[:：]?/i)
+  let prompt = text
+  let points = Array.isArray(cuePoints) && cuePoints.length > 0 ? [...cuePoints] : []
+
+  if (sayMatch) {
+    const sayIdx = sayMatch.index
+    prompt = text.substring(0, sayIdx).trim()
+    const afterSay = text.substring(sayIdx + sayMatch[0].length).trim()
+    if (!points.length) {
+      points = afterSay
+        .split(/\r?\n/)
+        .map((line) => line.replace(/^[-*•\d.)\s]+/, '').trim())
+        .filter(Boolean)
+    }
+  }
+
+  prompt = prompt.replace(/^Part\s*2\s*[:：]?\s*/i, '').trim()
+  points = points.filter((p) => !/^Part\s*3\b/i.test(p))
+
+  return { prompt: prompt || text, points }
+}
+
 function PartTwoContent({ lesson, answerDraft, onAnswerChange, revealed, onToggleAnswer }) {
   const answerKey = `${lesson.id}:sample-answer`
+  const { prompt: cleanPrompt, points: cleanPoints } = useMemo(() => {
+    return parsePromptParts(lesson.questionPrompt, lesson.cueCardPoints)
+  }, [lesson.questionPrompt, lesson.cueCardPoints])
+
   return (
     <div className="speaking-part2-content">
-      <div className="speaking-prompt-card">
-        <span className="speaking-label-kicker">SPEAKING QUESTION</span>
-        <p>{lesson.questionPrompt}</p>
+      <div className="speaking-part2-section-block">
+        <div className="speaking-kicker-header">
+          <span className="speaking-part2-kicker">PART 2 PROMPT</span>
+        </div>
+        <div className="speaking-part2-prompt-card">
+          <p>{cleanPrompt || lesson.questionPrompt}</p>
+        </div>
       </div>
-      {lesson.cueCardPoints?.length > 0 && (
-        <div className="speaking-cue-points">
-          <h4>Part 2 Cue Card</h4>
-          <ul>
-            {lesson.cueCardPoints.map((point, index) => (
-              <li key={`${index}-${point}`}>{point}</li>
-            ))}
-          </ul>
+
+      {cleanPoints?.length > 0 && (
+        <div className="speaking-part2-section-block">
+          <div className="speaking-kicker-header">
+            <span className="speaking-cue-kicker">CUE CARD · POINTS TO COVER</span>
+          </div>
+          <div className="speaking-part2-cue-card">
+            <div className="speaking-cue-prefix">You should say:</div>
+            <ul className="speaking-cue-list">
+              {cleanPoints.map((point, index) => (
+                <li key={`${index}-${point}`} className="speaking-cue-item">
+                  <span className="speaking-cue-bullet">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
+
       <SpeakingExamSimulator lesson={lesson} />
+
       <div className="speaking-section-divider">
         <span className="section-index">02</span>
         <div>
@@ -863,14 +965,329 @@ function PartTwoContent({ lesson, answerDraft, onAnswerChange, revealed, onToggl
   )
 }
 
-function combineSetMaps(sets, topic) {
-  return {
-    label: topic || 'Speaking Topics',
-    children: sets.map((set) => ({
-      label: set.label,
-      children: [{ label: set.mindMap?.label || set.topicCategory || set.label, children: set.mindMap?.children ?? [] }],
-    })),
+function QuestionAudioPlayer({ audioUrl, duration, onReRecord }) {
+  const audioRef = useRef(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [audioDuration, setAudioDuration] = useState(duration || 0)
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    const handleTimeUpdate = () => setCurrentTime(audio.currentTime)
+    const handleLoadedMetadata = () => {
+      if (audio.duration && !isNaN(audio.duration) && isFinite(audio.duration)) {
+        setAudioDuration(audio.duration)
+      }
+    }
+    const handleEnded = () => {
+      setIsPlaying(false)
+      setCurrentTime(0)
+    }
+    const handlePause = () => setIsPlaying(false)
+    const handlePlay = () => setIsPlaying(true)
+
+    audio.addEventListener('timeupdate', handleTimeUpdate)
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata)
+    audio.addEventListener('ended', handleEnded)
+    audio.addEventListener('pause', handlePause)
+    audio.addEventListener('play', handlePlay)
+
+    return () => {
+      audio.removeEventListener('timeupdate', handleTimeUpdate)
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata)
+      audio.removeEventListener('ended', handleEnded)
+      audio.removeEventListener('pause', handlePause)
+      audio.removeEventListener('play', handlePlay)
+    }
+  }, [audioUrl])
+
+  const togglePlay = () => {
+    if (!audioRef.current) return
+    if (isPlaying) {
+      audioRef.current.pause()
+    } else {
+      audioRef.current.play().catch(() => {})
+    }
   }
+
+  const handleSeek = (e) => {
+    const time = Number(e.target.value)
+    setCurrentTime(time)
+    if (audioRef.current) {
+      audioRef.current.currentTime = time
+    }
+  }
+
+  const formatSecs = (sec) => {
+    if (!sec || isNaN(sec)) return '00:00'
+    const m = Math.floor(sec / 60)
+    const s = Math.floor(sec % 60)
+    return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+  }
+
+  return (
+    <div className="speaking-replay-bar">
+      <audio ref={audioRef} src={audioUrl} preload="metadata" />
+      <div className="speaking-replay-label">
+        <span className="speaking-replay-dot">🎙️</span>
+        <span>本题答题回放</span>
+      </div>
+      <button
+        type="button"
+        className="speaking-replay-play-btn"
+        onClick={togglePlay}
+        aria-label={isPlaying ? '暂停回放' : '播放回放'}
+      >
+        {isPlaying ? '⏸' : '▶'}
+      </button>
+      <div className="speaking-replay-track-wrap">
+        <input
+          type="range"
+          min="0"
+          max={audioDuration || 1}
+          step="0.1"
+          value={currentTime}
+          onChange={handleSeek}
+          className="speaking-replay-slider"
+          aria-label="回放进度"
+        />
+      </div>
+      <span className="speaking-replay-time">
+        {formatSecs(currentTime)} / {formatSecs(audioDuration)}
+      </span>
+      {onReRecord && (
+        <button
+          type="button"
+          className="speaking-replay-rerecord-btn"
+          onClick={onReRecord}
+          title="重新录制本题作答"
+        >
+          🔄 重新录音
+        </button>
+      )}
+    </div>
+  )
+}
+
+function PartThreeContent({ lesson, revealedAnswers, onToggleAnswer }) {
+  const [recordings, setRecordings] = useState({})
+  const [activeRecordIdx, setActiveRecordIdx] = useState(null)
+  const [recordSeconds, setRecordSeconds] = useState(0)
+  const mediaRecorderRef = useRef(null)
+  const mediaStreamRef = useRef(null)
+  const timerRef = useRef(null)
+  const chunksRef = useRef([])
+
+  useEffect(() => {
+    return () => {
+      Object.values(recordings).forEach((rec) => {
+        if (rec?.url) URL.revokeObjectURL(rec.url)
+      })
+      if (timerRef.current) clearInterval(timerRef.current)
+      if (mediaStreamRef.current) {
+        mediaStreamRef.current.getTracks().forEach((track) => track.stop())
+      }
+    }
+  }, [lesson.id])
+
+  const stopActiveRecording = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current)
+      timerRef.current = null
+    }
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+      try {
+        mediaRecorderRef.current.stop()
+      } catch {}
+    }
+    if (mediaStreamRef.current) {
+      mediaStreamRef.current.getTracks().forEach((t) => t.stop())
+      mediaStreamRef.current = null
+    }
+    setActiveRecordIdx(null)
+  }
+
+  const startRecording = async (questionIndex) => {
+    if (activeRecordIdx !== null) {
+      stopActiveRecording()
+    }
+
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+      mediaStreamRef.current = stream
+      chunksRef.current = []
+
+      const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+        ? 'audio/webm;codecs=opus'
+        : MediaRecorder.isTypeSupported('audio/mp4')
+        ? 'audio/mp4'
+        : ''
+
+      const options = mimeType ? { mimeType } : undefined
+      const recorder = new MediaRecorder(stream, options)
+      mediaRecorderRef.current = recorder
+
+      recorder.ondataavailable = (event) => {
+        if (event.data && event.data.size > 0) {
+          chunksRef.current.push(event.data)
+        }
+      }
+
+      const startTime = Date.now()
+      recorder.onstop = () => {
+        const duration = Math.max(1, Math.round((Date.now() - startTime) / 1000))
+        const blob = new Blob(chunksRef.current, { type: mimeType || 'audio/webm' })
+        const url = URL.createObjectURL(blob)
+
+        setRecordings((prev) => {
+          if (prev[questionIndex]?.url) {
+            URL.revokeObjectURL(prev[questionIndex].url)
+          }
+          return {
+            ...prev,
+            [questionIndex]: { url, duration },
+          }
+        })
+      }
+
+      recorder.start(100)
+      setActiveRecordIdx(questionIndex)
+      setRecordSeconds(0)
+
+      timerRef.current = setInterval(() => {
+        setRecordSeconds((sec) => {
+          if (sec >= 45) {
+            stopActiveRecording()
+            return 45
+          }
+          return sec + 1
+        })
+      }, 1000)
+    } catch (err) {
+      alert('无法开启麦克风，请检查浏览器麦克风权限设置。')
+      setActiveRecordIdx(null)
+    }
+  }
+
+  const formatTimer = (sec) => {
+    const m = Math.floor(sec / 60)
+    const s = Math.floor(sec % 60)
+    return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
+  }
+
+  const questions = lesson.questions ?? []
+
+  if (questions.length === 0) {
+    return (
+      <div className="speaking-part3-empty-card">
+        <div className="speaking-part3-empty-icon">💬</div>
+        <h4>暂无 Part 3 深度讨论题目</h4>
+        <p>当前口语课程暂未配置 Part 3 深度拓展讨论。可点击上方【编辑】或【粘贴 Gemini JSON】录入讨论问题与范例答案。</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="speaking-part3-content">
+      <div className="speaking-part3-topic-banner">
+        <span className="speaking-part3-topic-kicker">TWO-WAY DISCUSSION · PART 3</span>
+        <h4>{getSpeakingTitle(lesson)} · 深度拓展讨论</h4>
+      </div>
+
+      {questions.map((item, index) => {
+        const key = `${lesson.id}:p3:${index}`
+        const revealed = Boolean(revealedAnswers[key])
+        const perspective = item.perspective || PERSPECTIVE_OPTIONS[index % 4] || '思路一'
+        const perspectiveIndex = PERSPECTIVE_OPTIONS.indexOf(perspective) >= 0 ? PERSPECTIVE_OPTIONS.indexOf(perspective) : (index % 4)
+        const isRecording = activeRecordIdx === index
+        const recording = recordings[index]
+
+        return (
+          <article className="speaking-part3-card" key={`${index}-${item.question}`}>
+            <div className="speaking-part3-header-bar">
+              <div className="speaking-part3-q-title">
+                <span className="speaking-q-pill speaking-q-pill-p3">Q{index + 1}</span>
+                <h5 className="speaking-part3-question-line">{item.question}</h5>
+              </div>
+              <div className="speaking-part3-record-action">
+                {isRecording ? (
+                  <button
+                    type="button"
+                    className="speaking-record-btn is-recording"
+                    onClick={stopActiveRecording}
+                  >
+                    <span className="speaking-record-pulse-dot" />
+                    <span>{formatTimer(recordSeconds)} / 00:45 结束作答</span>
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="speaking-record-btn"
+                    onClick={() => startRecording(index)}
+                  >
+                    <span>🎙️ 录音作答</span>
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {recording && (
+              <QuestionAudioPlayer
+                audioUrl={recording.url}
+                duration={recording.duration}
+                onReRecord={() => startRecording(index)}
+              />
+            )}
+
+            <div
+              className={`speaking-sample-answer ${revealed ? 'revealed' : 'concealed'}`}
+              data-perspective={perspective}
+              data-perspective-index={perspectiveIndex}
+              role="group"
+              tabIndex={0}
+              aria-label={revealed ? '范例答案（按 Enter 隐藏）' : `${perspective} 范例答案（点击或按 Enter 显示）`}
+              onClick={() => onToggleAnswer(key)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault()
+                  onToggleAnswer(key)
+                }
+              }}
+            >
+              <div className="speaking-sample-answer-meta">
+                <span>Sample answer · 深度讨论范例</span>
+                {revealed && (
+                  <span className="speaking-perspective-badge-inline">
+                    {perspective}
+                  </span>
+                )}
+              </div>
+              {revealed ? (
+                <p>{item.sampleAnswer}</p>
+              ) : (
+                <div className="speaking-concealed-placeholder">
+                  <span className="speaking-concealed-hint">{perspective} · 点击查看示范答案</span>
+                  <span className="speaking-concealed-icon">◌</span>
+                </div>
+              )}
+              <button
+                type="button"
+                aria-label={revealed ? '隐藏答案' : '显示答案'}
+                onClick={(event) => {
+                  event.stopPropagation()
+                  onToggleAnswer(key)
+                }}
+              >
+                {revealed ? '◉' : '◌'}
+              </button>
+            </div>
+          </article>
+        )
+      })}
+    </div>
+  )
 }
 
 export default function SpeakingStudio({
@@ -880,6 +1297,7 @@ export default function SpeakingStudio({
   onUploadSpeakingImage,
   onDeleteSpeakingLesson,
   onSaveSpeakingLesson,
+  onEditSpeakingLesson,
   selectedLessonId = '',
   onLessonIdChange,
   mindMapDrafts = {},
@@ -890,6 +1308,8 @@ export default function SpeakingStudio({
   onNavigateListening,
 }) {
   const [selectedId, setSelectedId] = useState(() => selectedLessonId || localStorage.getItem('ielts-speaking-selected-id') || lessons[0]?.id || '')
+  const [subPartTab, setSubPartTab] = useState('part2')
+  const [mindMapViewMode, setMindMapViewMode] = useState('lesson')
   const [answerDraft, setAnswerDraft] = useState('')
   const [importOpen, setImportOpen] = useState(false)
   const [importText, setImportText] = useState('')
@@ -906,13 +1326,8 @@ export default function SpeakingStudio({
   const [manualError, setManualError] = useState('')
   const [manualSaving, setManualSaving] = useState(false)
   const [deleteOpen, setDeleteOpen] = useState(false)
-  const [deleteScope, setDeleteScope] = useState('set')
   const [deleteAudio, setDeleteAudio] = useState(false)
-  const [selectedSetId, setSelectedSetId] = useState('all')
-  const [mergeOpen, setMergeOpen] = useState(false)
-  const [mergeTargetId, setMergeTargetId] = useState('')
-  const [mergeLabel, setMergeLabel] = useState('')
-  const [mergeMode, setMergeMode] = useState('independent')
+  // Removed legacy merge state
   const [manualQuestionDraft, setManualQuestionDraft] = useState([])
   const [revealedAnswers, setRevealedAnswers] = useState({})
   const [vocabularyMode, setVocabularyMode] = useState(() => localStorage.getItem('ielts-speaking-vocabulary-mode') || 'all')
@@ -921,20 +1336,69 @@ export default function SpeakingStudio({
   const [newImageCaption, setNewImageCaption] = useState('')
 
   const lesson = lessons.find((item) => item.id === selectedId) ?? currentImported ?? lessons[0] ?? emptyLesson
-  const topicCategories = useMemo(() => [...new Set(lessons.map((item) => item.topicCategory || '未分类'))].sort((a, b) => a.localeCompare(b, 'zh-CN')), [lessons])
-  const [selectedTopic, setSelectedTopic] = useState(lesson.topicCategory || '')
-  const [selectedPart, setSelectedPart] = useState(speakingPartType(lesson))
-  const topicsForCategory = useMemo(() => lessons.filter((item) => item.topicCategory === selectedTopic), [lessons, selectedTopic])
-  const lessonsForCategoryPart = useMemo(() => sortByEnglishTitle(topicsForCategory.filter((item) => speakingPartType(item) === selectedPart), getSpeakingTitle), [topicsForCategory, selectedPart])
-  const lessonSets = getLessonSets(lesson)
-  const activeSet = lessonSets.length === 1 ? lessonSets[0] : lessonSets.find((item) => item.id === selectedSetId)
-  const displayLesson = activeSet ? { ...lesson, ...activeSet } : lesson
-  const displayImages = activeSet?.images?.length ? activeSet.images : (displayLesson.images?.length ? displayLesson.images : (lesson.images ?? []))
-  const activeVocabulary = activeSet ? activeSet.vocabulary ?? [] : lessonSets.length ? lessonSets.flatMap((item) => item.vocabulary ?? []) : lesson.vocabulary ?? []
-  const deleteTargetAudioUrls = (deleteScope === 'set' && activeSet ? [activeSet.audioUrl] : lessonSets.length ? lessonSets.map((set) => set.audioUrl) : [lesson.audioUrl]).filter((url) => url?.startsWith('/audio/'))
-  const mapKey = `speaking:${lesson.id}${activeSet ? `:${activeSet.id}` : ''}`
-  const activeMap = mindMapDrafts[mapKey] ?? (activeSet?.mindMap ?? (lessonSets.length ? lesson.mindMap ?? combineSetMaps(lessonSets, lesson.topicCategory) : lesson.mindMap))
+  const topicCategories = useMemo(() => [...new Set(lessons.map((item) => item.topicCategory || '未分类'))].sort((a, b) => a.localeCompare(b, 'zh-Hans-CN')), [lessons])
+  const [selectedTopic, setSelectedTopic] = useState(() => lesson.topicCategory || topicCategories[0] || '未分类')
+  const [selectedPart, setSelectedPart] = useState(() => speakingPartType(lesson))
+
+  const categoryLessons = useMemo(() => lessons.filter((item) => item.topicCategory === selectedTopic), [lessons, selectedTopic])
+  const p1Lessons = useMemo(() => sortByEnglishTitle(categoryLessons.filter((item) => speakingPartType(item) === 'Part 1'), getSpeakingTitle), [categoryLessons])
+  const p23Lessons = useMemo(() => sortByEnglishTitle(categoryLessons.filter((item) => speakingPartType(item) === 'Part 2 & 3'), getSpeakingTitle), [categoryLessons])
+  const p1Count = p1Lessons.length
+  const p23Count = p23Lessons.length
+  const lessonsForCategoryPart = selectedPart === 'Part 1' ? p1Lessons : p23Lessons
+
+  const displayLesson = lesson
+  const displayImages = displayLesson.images?.length ? displayLesson.images : (lesson.images ?? [])
+  const activeVocabulary = lesson.vocabulary ?? []
+  const deleteTargetAudioUrls = [lesson.audioUrl].filter((url) => url?.startsWith('/audio/'))
+  const mapKey = `speaking:${lesson.id}`
+  const activeMap = mindMapDrafts[mapKey] ?? lesson.mindMap
   const mindMapPreview = useMemo(() => manualForm ? parseMindMapOutline(manualForm.mindMapText, manualForm.title || 'Speaking Outline') : activeMap, [manualForm, activeMap])
+
+  // Category Overview Mind Map
+  const categoryOverviewMap = useMemo(() => {
+    const branches = []
+    if (p1Lessons.length > 0) {
+      branches.push({
+        label: `Part 1 话题库 (${p1Lessons.length} 题)`,
+        children: p1Lessons.map((l) => ({
+          label: getSpeakingTitle(l),
+          children: l.mindMap?.children?.length ? l.mindMap.children : [{ label: l.mindMap?.label || getSpeakingTitle(l) }],
+        })),
+      })
+    }
+    if (p23Lessons.length > 0) {
+      branches.push({
+        label: `Part 2 & 3 话题库 (${p23Lessons.length} 题)`,
+        children: p23Lessons.map((l) => ({
+          label: getSpeakingTitle(l),
+          children: l.mindMap?.children?.length ? l.mindMap.children : [{ label: l.mindMap?.label || getSpeakingTitle(l) }],
+        })),
+      })
+    }
+    return {
+      label: `${selectedTopic || '口语话题'} · 话题导图总览`,
+      children: branches,
+    }
+  }, [selectedTopic, p1Lessons, p23Lessons])
+
+  // Auto-switch Part if current Part has 0 lessons in this topic category
+  useEffect(() => {
+    if (selectedPart === 'Part 1' && p1Count === 0 && p23Count > 0) {
+      setSelectedPart('Part 2 & 3')
+    } else if (selectedPart === 'Part 2 & 3' && p23Count === 0 && p1Count > 0) {
+      setSelectedPart('Part 1')
+    }
+  }, [selectedTopic, selectedPart, p1Count, p23Count])
+
+  // Auto-select valid lesson when category or part changes
+  useEffect(() => {
+    if (lessonsForCategoryPart.length > 0) {
+      if (!lessonsForCategoryPart.some((item) => item.id === lesson.id)) {
+        selectLesson(lessonsForCategoryPart[0].id)
+      }
+    }
+  }, [lessonsForCategoryPart, lesson.id])
 
   useEffect(() => {
     if (selectedLessonId && lessons.some((item) => item.id === selectedLessonId)) setSelectedId(selectedLessonId)
@@ -960,7 +1424,6 @@ export default function SpeakingStudio({
     }
     setCurrentImported(null)
     setAnswerDraft('')
-    setSelectedSetId('all')
     setFeedback('已切换口语练习。')
   }
 
@@ -968,79 +1431,45 @@ export default function SpeakingStudio({
     setRevealedAnswers((current) => ({ ...current, [key]: !current[key] }))
   }
 
-  async function saveMergedLesson(incoming, targetId, label) {
-    const target = lessons.find((item) => item.id === targetId)
-    if (!target) throw new Error('请选择要合并到的口语题。')
-    const existingSets = getLessonSets(target)
-    const sets = existingSets.length ? existingSets : [asSet(target)]
-    const setLabel = label.trim() || `Set ${sets.length + 1}`
-    const setId = slug(setLabel)
-    if (sets.some((set) => set.id === setId)) throw new Error('该子集标签已存在，请换一个名称。')
-    const mergedSets = prepareSets([...sets, asSet(incoming, setLabel, setId)], target.id)
-    const merged = { ...target, sets: mergedSets, vocabulary: mergedSets.flatMap((set) => set.vocabulary) }
-    merged.mindMap = combineSetMaps(merged.sets, target.topicCategory)
-    const saved = await onSaveSpeakingLesson(merged)
-    if (!saved) throw new Error('合并内容未能保存到浏览器。')
-    setCurrentImported(merged)
-    setSelectedId(target.id)
-    setSelectedSetId(setId)
-    return saved
-  }
-
-  async function mergeCurrentLesson() {
-    if (!mergeTargetId || mergeTargetId === lesson.id) {
-      setManualError('请选择另一道口语题作为合并目标。')
-      return
-    }
-    try {
-      const target = lessons.find((item) => item.id === mergeTargetId)
-      if (!target) throw new Error('请选择要合并到的口语题。')
-      const existingSets = getLessonSets(target)
-      const sets = existingSets.length ? existingSets : [asSet(target)]
-      const setLabel = mergeLabel.trim() || `Set ${sets.length + 1}`
-      const setId = slug(setLabel)
-      if (sets.some((set) => set.id === setId)) throw new Error('该子集标签已存在，请换一个名称。')
-      const mergedSets = prepareSets([...sets, asSet(lesson, setLabel, setId)], target.id)
-      const merged = { ...target, sets: mergedSets, vocabulary: mergedSets.flatMap((set) => set.vocabulary) }
-      merged.mindMap = combineSetMaps(merged.sets, target.topicCategory)
-      const saved = await onSaveSpeakingLesson(merged)
-      if (!saved) throw new Error('目标口语题保存失败。')
-      await onDeleteSpeakingLesson(lesson)
-      setSelectedId(merged.id)
-      setSelectedSetId(slug(setLabel))
-      setCurrentImported(merged)
-      setMergeOpen(false)
-      setFeedback('已将当前口语题合并为目标题目下的子集。')
-    } catch (error) {
-      setManualError(`合并失败：${error.message}`)
-    }
-  }
+// Legacy merge functions removed
 
   async function copySnippet(type) {
-    const isP1 = templateTab === 'Part 1'
+    let currentTemplate = PART23_FULL_TEMPLATE
+    if (templateTab === 'Part 1') currentTemplate = PART1_FULL_TEMPLATE
+    else if (templateTab === 'Part 2') currentTemplate = PART2_FULL_TEMPLATE
+    else if (templateTab === 'Part 3') currentTemplate = PART3_FULL_TEMPLATE
+
     let textToCopy = ''
     let label = ''
 
     if (type === 'full') {
-      textToCopy = JSON.stringify(isP1 ? PART1_FULL_TEMPLATE : PART23_FULL_TEMPLATE, null, 2)
+      textToCopy = JSON.stringify(currentTemplate, null, 2)
       label = `${templateTab} 完整 JSON 模板`
     } else if (type === 'questions') {
-      if (isP1) {
-        textToCopy = JSON.stringify(PART1_FULL_TEMPLATE.questions, null, 2)
-        label = 'Part 1 分问题与范例答案 (questions)'
+      if (templateTab === 'Part 1' || templateTab === 'Part 3') {
+        textToCopy = JSON.stringify(currentTemplate.questions, null, 2)
+        label = `${templateTab} 分问题与范例答案 (questions)`
+      } else if (templateTab === 'Part 2') {
+        textToCopy = JSON.stringify({
+          questionPrompt: PART2_FULL_TEMPLATE.questionPrompt,
+          cueCardPoints: PART2_FULL_TEMPLATE.cueCardPoints,
+          sampleAnswer: PART2_FULL_TEMPLATE.sampleAnswer,
+        }, null, 2)
+        label = 'Part 2 题目与范例答案'
       } else {
         textToCopy = JSON.stringify({
           questionPrompt: PART23_FULL_TEMPLATE.questionPrompt,
           cueCardPoints: PART23_FULL_TEMPLATE.cueCardPoints,
           sampleAnswer: PART23_FULL_TEMPLATE.sampleAnswer,
+          questions: PART23_FULL_TEMPLATE.questions || [],
         }, null, 2)
-        label = 'Part 2 & 3 题目与范例答案 (sampleAnswer)'
+        label = 'Part 2 & 3 题目与范例答案'
       }
     } else if (type === 'vocabulary') {
-      textToCopy = JSON.stringify(isP1 ? PART1_FULL_TEMPLATE.vocabulary : PART23_FULL_TEMPLATE.vocabulary, null, 2)
+      textToCopy = JSON.stringify(currentTemplate.vocabulary, null, 2)
       label = '高分核心词汇 (vocabulary)'
     } else if (type === 'mindMap') {
-      textToCopy = JSON.stringify(isP1 ? PART1_FULL_TEMPLATE.mindMap : PART23_FULL_TEMPLATE.mindMap, null, 2)
+      textToCopy = JSON.stringify(currentTemplate.mindMap, null, 2)
       label = '全英文思维导图 (mindMap)'
     } else if (type === 'prompt') {
       textToCopy = promptForPart(templateTab, displayLesson)
@@ -1149,14 +1578,10 @@ export default function SpeakingStudio({
       return
     }
     try {
-      const targetId = mergeTargetId
-      const saved = mergeMode === 'merge' ? await saveMergedLesson(importPreview, targetId, mergeLabel) : await onSaveSpeakingLesson(importPreview)
+      const saved = await onSaveSpeakingLesson(importPreview)
       if (!saved) throw new Error('浏览器本地空间不足，无法保存该口语课。')
-      if (mergeMode !== 'merge') {
-        setCurrentImported(importPreview)
-        setSelectedId(importPreview.id)
-        setSelectedSetId('all')
-      }
+      setCurrentImported(importPreview)
+      setSelectedId(importPreview.id)
       setAnswerDraft('')
       setImportOpen(false)
       setImportText('')
@@ -1172,11 +1597,7 @@ export default function SpeakingStudio({
   }
 
   function openManualForm(isNew = false) {
-    if (isNew) {
-      setMergeMode('independent')
-      setMergeTargetId('')
-      setMergeLabel('')
-    }
+    // Initializing manual form
     const source = isNew ? {
       id: '',
       title: '',
@@ -1190,7 +1611,7 @@ export default function SpeakingStudio({
       vocabulary: [],
       mindMap: { label: 'Speaking Outline', children: [] },
       images: [],
-    } : { ...displayLesson, id: lesson.id, originalId: lesson.id, editingSetId: activeSet?.id, sampleAnswer: answerDraft || displayLesson.sampleAnswer }
+    } : { ...displayLesson, id: lesson.id, originalId: lesson.id,  sampleAnswer: answerDraft || displayLesson.sampleAnswer }
 
     setManualForm({
       ...source,
@@ -1307,9 +1728,10 @@ export default function SpeakingStudio({
       return
     }
 
-    const savedQuestions = partOne
+    const hasQuestionList = manualForm.part === 'Part 1' || manualForm.part === 'Part 3' || manualForm.part === 'Part 2 & 3'
+    const savedQuestions = hasQuestionList
       ? manualQuestionDraft
-          .filter((item) => item.question.trim() && item.sampleAnswer.trim())
+          .filter((item) => item.question.trim())
           .map((item, idx) => ({
             question: item.question.trim(),
             sampleAnswer: item.sampleAnswer.trim(),
@@ -1317,42 +1739,61 @@ export default function SpeakingStudio({
           }))
       : []
 
-    const savedLesson = {
+    let finalLesson = {
       id,
       title: title || (partOne ? '' : questionPrompt.split(/\r?\n/)[0]),
       part: manualForm.part,
       topicCategory,
-      questionPrompt: partOne ? (title || 'Part 1 Topic') : questionPrompt,
+      questionPrompt: partOne || manualForm.part === 'Part 3' ? (title || 'Speaking Topic') : questionPrompt,
       questions: savedQuestions,
-      cueCardPoints: partOne ? [] : manualForm.cueCardText.split(/\r?\n/).map((point) => point.trim()).filter(Boolean),
+      cueCardPoints: partOne || manualForm.part === 'Part 3' ? [] : manualForm.cueCardText.split(/\r?\n/).map((point) => point.trim()).filter(Boolean),
       audioUrl: manualForm.audioUrl || '',
-      sampleAnswer: partOne ? (savedQuestions[0]?.sampleAnswer || '') : manualForm.sampleAnswer.trim(),
+      sampleAnswer: (partOne || manualForm.part === 'Part 3') ? (savedQuestions[0]?.sampleAnswer || '') : manualForm.sampleAnswer.trim(),
       vocabulary,
       mindMap,
       images: (manualForm.images || []).filter((img) => img && img.url),
     }
 
+    // Auto-merge / grouping: When saving a Part 3 item, check if matching Part 2 exists under same category
+    let autoPairMsg = ''
+    if (manualForm.part === 'Part 3' && !manualForm.id && !manualForm.editingSetId) {
+      const matchPart2 = lessons.find(
+        (l) =>
+          l.id !== id &&
+          (l.part === 'Part 2' || l.part === 'Part 2 & 3') &&
+          l.topicCategory === topicCategory &&
+          (l.title.toLowerCase().trim() === title.toLowerCase().trim() || slug(l.title) === slug(title))
+      )
+      if (matchPart2) {
+        const existingQs = matchPart2.questions || []
+        const mergedQs = [
+          ...existingQs,
+          ...savedQuestions.filter((sq) => !existingQs.some((eq) => eq.question.toLowerCase().trim() === sq.question.toLowerCase().trim()))
+        ]
+        const vocabMap = new Map()
+        ;(matchPart2.vocabulary || []).forEach((v) => vocabMap.set(v.term.toLowerCase(), v))
+        vocabulary.forEach((v) => { if (!vocabMap.has(v.term.toLowerCase())) vocabMap.set(v.term.toLowerCase(), v) })
+
+        finalLesson = {
+          ...matchPart2,
+          part: 'Part 2 & 3',
+          questions: mergedQs,
+          vocabulary: Array.from(vocabMap.values()),
+        }
+        autoPairMsg = ` 已自动与同话题 Part 2《${matchPart2.title}》聚合为完整的【Part 2 & 3】单元！`
+      }
+    }
+
+    const savedLesson = finalLesson
+
     setManualSaving(true)
     try {
       let result
       let persistedLesson = savedLesson
-      if (manualForm.editingSetId) {
-        const sets = prepareSets(lessonSets.map((set) => set.id === manualForm.editingSetId ? asSet(savedLesson, set.label, set.id) : set), id)
-        persistedLesson = { ...lesson, id, title: savedLesson.title, sets, vocabulary: sets.flatMap((set) => set.vocabulary), mindMap: combineSetMaps(sets, lesson.topicCategory) }
-        result = await onSaveSpeakingLesson(persistedLesson, id !== lesson.id ? lesson.id : '')
-      } else {
-        result = !manualForm.originalId && !manualForm.editingSetId && !manualForm.id && mergeMode === 'merge'
-          ? await saveMergedLesson(savedLesson, mergeTargetId, mergeLabel)
-          : await onSaveSpeakingLesson(savedLesson, manualForm.originalId && id !== manualForm.originalId ? manualForm.originalId : '')
-      }
+      result = await onSaveSpeakingLesson(savedLesson, manualForm.originalId && id !== manualForm.originalId ? manualForm.originalId : '')
       if (!result) throw new Error('浏览器本地空间不足，无法保存。')
-      if (manualForm.editingSetId) {
-        setSelectedId(id)
-        setCurrentImported(persistedLesson)
-      } else if (manualForm.id || mergeMode !== 'merge') {
-        setSelectedId(id)
-        setCurrentImported(savedLesson)
-      }
+      setSelectedId(id)
+      setCurrentImported(savedLesson)
       setAnswerDraft('')
       setEditing(false)
       setManualForm(null)
@@ -1366,7 +1807,6 @@ export default function SpeakingStudio({
 
   function deleteLesson() {
     if (!lesson.id) return
-    setDeleteScope(lessonSets.length > 1 && activeSet ? 'set' : 'all')
     setDeleteAudio(false)
     setDeleteOpen(true)
   }
@@ -1374,21 +1814,14 @@ export default function SpeakingStudio({
   async function confirmDeleteLesson() {
     try {
       const warning = await onDeleteSpeakingLesson(lesson, {
-        setId: deleteScope === 'set' ? activeSet?.id : undefined,
         deleteAudio,
         audioUrls: deleteTargetAudioUrls,
       })
       const remaining = lessons.filter((item) => item.id !== lesson.id)
-      if (deleteScope === 'set' && lessonSets.length > 1) {
-        const updated = { ...lesson, sets: lessonSets.filter((set) => set.id !== activeSet?.id) }
-        setCurrentImported(updated)
-        setSelectedSetId('all')
-      } else {
-        setSelectedId(remaining[0]?.id ?? '')
-        setCurrentImported(null)
-      }
+      setSelectedId(remaining[0]?.id ?? '')
+      setCurrentImported(null)
       setDeleteOpen(false)
-      setFeedback(warning ? `口语内容已删除，但有提示：${warning}` : '口语内容已删除。')
+      setFeedback(warning ? `口语题目已删除，但有提示：${warning}` : '口语题目已删除。')
     } catch (error) {
       setFeedback(`删除失败：${error.message}`)
     }
@@ -1410,28 +1843,6 @@ export default function SpeakingStudio({
         <div>
           <span className="eyebrow-small">OFFLINE SPEAKING STUDIO</span>
           <h2>雅思口语教研与答题训练</h2>
-        </div>
-        <div className="speaking-header-actions">
-          <span className="speaking-status">
-            <span className="status-dot" />本地独立题库
-          </span>
-          <button className="gemini-import-button" onClick={() => openManualForm(true)}>
-            <Plus size={15} />新增/录入口语练习
-          </button>
-          <button
-            className="speaking-secondary-action"
-            onClick={() => {
-              setImportOpen(true)
-              setImportError('')
-              setParseSuccessMsg('')
-              setImportPreview(null)
-              setMergeMode('independent')
-              setMergeTargetId('')
-              setMergeLabel('')
-            }}
-          >
-            <FilePlus2 size={15} />粘贴 Gemini JSON
-          </button>
         </div>
       </div>
 
@@ -1459,112 +1870,126 @@ export default function SpeakingStudio({
           </div>
           <div className="speaking-browse-controls">
             <div className="speaking-field-row">
-              <label htmlFor="speaking-topic-select">话题大类</label>
-              <span className="speaking-select-wrap">
-                <select
-                  id="speaking-topic-select"
-                  value={selectedTopic}
-                  onChange={(event) => {
-                    const topic = event.target.value
-                    const candidates = lessons.filter((item) => item.topicCategory === topic)
-                    const part = candidates.some((item) => speakingPartType(item) === selectedPart) ? selectedPart : 'Part 1'
-                    const next = sortByEnglishTitle(candidates.filter((item) => speakingPartType(item) === part), getSpeakingTitle)[0] ?? sortByEnglishTitle(candidates, getSpeakingTitle)[0]
-                    setSelectedTopic(topic)
-                    if (next) selectLesson(next.id)
+              <div className="speaking-field-group">
+                <div className="speaking-field-label-wrap">
+                  <label htmlFor="speaking-topic-select">话题大类</label>
+                  <span className="speaking-topic-count-badge">
+                    Part 1 ({p1Count}题) · Part 2&amp;3 ({p23Count}题)
+                  </span>
+                </div>
+                <span className="speaking-select-wrap">
+                  <select
+                    id="speaking-topic-select"
+                    value={selectedTopic}
+                    onChange={(event) => {
+                      const topic = event.target.value
+                      const candidates = lessons.filter((item) => item.topicCategory === topic)
+                      const hasP1 = candidates.some((item) => speakingPartType(item) === 'Part 1')
+                      const hasP23 = candidates.some((item) => speakingPartType(item) === 'Part 2 & 3')
+                      let nextPart = selectedPart
+                      if (selectedPart === 'Part 1' && !hasP1 && hasP23) nextPart = 'Part 2 & 3'
+                      if (selectedPart === 'Part 2 & 3' && !hasP23 && hasP1) nextPart = 'Part 1'
+                      setSelectedTopic(topic)
+                      setSelectedPart(nextPart)
+                      const targetLessons = sortByEnglishTitle(candidates.filter((item) => speakingPartType(item) === nextPart), getSpeakingTitle)
+                      if (targetLessons[0]) selectLesson(targetLessons[0].id)
+                    }}
+                  >
+                    {topicCategories.map((topic) => {
+                      const topicTotal = lessons.filter((item) => item.topicCategory === topic).length
+                      return (
+                        <option key={topic} value={topic}>
+                          {topic} ({topicTotal} 题)
+                        </option>
+                      )
+                    })}
+                  </select>
+                  <ChevronDown size={15} />
+                </span>
+              </div>
+
+              <div className="speaking-field-group">
+                <label>Part 分类</label>
+                <div className="speaking-part-capsule-switcher" role="tablist" aria-label="Part 分类选择">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={selectedPart === 'Part 1'}
+                    className={`speaking-part-capsule-btn ${selectedPart === 'Part 1' ? 'active' : ''}`}
+                    onClick={() => {
+                      setSelectedPart('Part 1')
+                      if (p1Lessons.length > 0) selectLesson(p1Lessons[0].id)
+                    }}
+                    disabled={p1Count === 0}
+                  >
+                    Part 1 ({p1Count})
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={selectedPart === 'Part 2 & 3'}
+                    className={`speaking-part-capsule-btn ${selectedPart === 'Part 2 & 3' ? 'active' : ''}`}
+                    onClick={() => {
+                      setSelectedPart('Part 2 & 3')
+                      if (p23Lessons.length > 0) selectLesson(p23Lessons[0].id)
+                    }}
+                    disabled={p23Count === 0}
+                  >
+                    Part 2 &amp; 3 ({p23Count})
+                  </button>
+                </div>
+              </div>
+
+              <div className="speaking-field-group">
+                <label htmlFor="speaking-lesson">具体题目</label>
+                <span className="speaking-select-wrap">
+                  <select
+                    id="speaking-lesson"
+                    value={lesson.id}
+                    onChange={(event) => selectLesson(event.target.value)}
+                  >
+                    {lessonsForCategoryPart.length === 0 ? (
+                      <option value="">当前分类下暂无题目</option>
+                    ) : (
+                      lessonsForCategoryPart.map((item) => (
+                        <option key={item.id} value={item.id}>
+                          {getSpeakingTitle(item)}
+                        </option>
+                      ))
+                    )}
+                  </select>
+                  <ChevronDown size={15} />
+                </span>
+              </div>
+            </div>
+
+            <div className="speaking-current-bar">
+              <div className="speaking-current-title-block">
+                <span className="speaking-current-part-tag">{lesson.part}</span>
+                <strong className="speaking-current-title-text">{getSpeakingTitle(lesson)}</strong>
+              </div>
+              <div className="speaking-actions-row">
+                <button
+                  type="button"
+                  className="speaking-secondary-action"
+                  onClick={() => {
+                    if (onEditSpeakingLesson) onEditSpeakingLesson(displayLesson)
+                    else openManualForm()
                   }}
                 >
-                  {topicCategories.map((topic) => (
-                    <option key={topic}>{topic}</option>
-                  ))}
-                </select>
-                <ChevronDown size={15} />
-              </span>
-              <label htmlFor="speaking-part-select">Part</label>
-              <span className="speaking-select-wrap">
-                <select
-                  id="speaking-part-select"
-                  value={selectedPart}
-                  onChange={(event) => {
-                    const part = event.target.value
-                    setSelectedPart(part)
-                    const next = sortByEnglishTitle(topicsForCategory.filter((item) => speakingPartType(item) === part), getSpeakingTitle)[0]
-                    if (next) selectLesson(next.id)
-                  }}
+                  <FilePlus2 size={14} />编辑
+                </button>
+                <button
+                  type="button"
+                  className="speaking-danger-button"
+                  disabled={!lesson.id}
+                  onClick={deleteLesson}
                 >
-                  <option>Part 1</option>
-                  <option>Part 2 &amp; 3</option>
-                </select>
-                <ChevronDown size={15} />
-              </span>
-              <label htmlFor="speaking-lesson">具体题目</label>
-              <span className="speaking-select-wrap">
-                <select
-                  id="speaking-lesson"
-                  value={lesson.id}
-                  onChange={(event) => selectLesson(event.target.value)}
-                >
-                  {lessonsForCategoryPart.map((item) => (
-                    <option key={item.id} value={item.id}>
-                      {getSpeakingTitle(item)}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown size={15} />
-              </span>
-            </div>
-            <div className="speaking-current-title">
-              <strong>{getSpeakingTitle(displayLesson)}</strong>
-            </div>
-            <div className="speaking-actions-row">
-              <button className="speaking-secondary-action" onClick={() => openManualForm()}>
-                <FilePlus2 size={14} />编辑
-              </button>
-              <button
-                className="speaking-secondary-action"
-                disabled={lessons.length < 2}
-                onClick={() => {
-                  setMergeTargetId(lessons.find((item) => item.id !== lesson.id)?.id ?? '')
-                  setMergeLabel(`Set ${lessonSets.length + 1}`)
-                  setMergeOpen(true)
-                }}
-              >
-                🔗 合并到其他题
-              </button>
-              <button
-                className="speaking-danger-button"
-                disabled={!lesson.id}
-                onClick={deleteLesson}
-              >
-                <Trash2 size={14} />删除当前口语题
-              </button>
+                  <Trash2 size={14} />删除当前口语题
+                </button>
+              </div>
             </div>
           </div>
-
-          {lessonSets.length > 1 && (
-            <div className="speaking-set-selector">
-              <button
-                className={selectedSetId === 'all' ? 'active' : ''}
-                onClick={() => {
-                  setSelectedSetId('all')
-                  setAnswerDraft('')
-                }}
-              >
-                全部显示 (All Sets)
-              </button>
-              {lessonSets.map((set) => (
-                <button
-                  className={selectedSetId === set.id ? 'active' : ''}
-                  key={set.id}
-                  onClick={() => {
-                    setSelectedSetId(set.id)
-                    setAnswerDraft('')
-                  }}
-                >
-                  {set.label}
-                </button>
-              ))}
-            </div>
-          )}
 
           {editing && manualForm ? (
             <div className="speaking-manual-form">
@@ -1618,30 +2043,84 @@ export default function SpeakingStudio({
                 </label>
               </div>
 
-              {manualForm.part !== 'Part 1' && (
+              {(manualForm.part === 'Part 2' || manualForm.part === 'Part 2 & 3') && (
                 <label className="speaking-text-label">
-                  口语题目
+                  Part 2 核心题干 Prompt
                   <textarea
                     className="speaking-question-input"
                     value={manualForm.questionPrompt}
                     onChange={(event) => updateManualField('questionPrompt', event.target.value)}
                     rows="3"
-                    placeholder="完整的 Cue Card 提示语及 Part 3 讨论题目..."
+                    placeholder="例如 Describe a memorable journey you took by public transport..."
                   />
                 </label>
               )}
 
-              {manualForm.part === 'Part 1' ? (
+              {(manualForm.part === 'Part 2' || manualForm.part === 'Part 2 & 3') && (
+                <>
+                  <label className="speaking-text-label">
+                    Part 2 Cue Card 提纲要点（每行一项）
+                    <textarea
+                      className="speaking-question-input"
+                      value={manualForm.cueCardText}
+                      onChange={(event) => updateManualField('cueCardText', event.target.value)}
+                      rows="4"
+                      placeholder={'Where you went and when\nWhat transport you took\nWho accompanied you\nWhy it was memorable'}
+                    />
+                  </label>
+                  <div className="speaking-text-label">
+                    示范音频（可选）
+                    <div className="speaking-manual-audio">
+                      <select
+                        value={manualForm.audioUrl}
+                        onChange={(event) => updateManualField('audioUrl', event.target.value)}
+                      >
+                        <option value="">不绑定音频</option>
+                        {audioFiles.map((file) => (
+                          <option key={file.url} value={file.url}>
+                            {file.name}
+                          </option>
+                        ))}
+                      </select>
+                      <label className="speaking-upload-button">
+                        上传音频
+                        <input
+                          type="file"
+                          accept="audio/*,.mp3,.wav,.m4a,.ogg"
+                          onChange={uploadSpeakingAudio}
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  <label className="speaking-text-label">
+                    Part 2 个人长陈述高分范例答案
+                    <textarea
+                      className="speaking-answer-input"
+                      value={manualForm.sampleAnswer}
+                      onChange={(event) => updateManualField('sampleAnswer', event.target.value)}
+                      placeholder="自然口语化、连贯且地道的 IELTS 7.5 水平高分长陈述范文..."
+                    />
+                  </label>
+                </>
+              )}
+
+              {(manualForm.part === 'Part 1' || manualForm.part === 'Part 3' || manualForm.part === 'Part 2 & 3') && (
                 <div className="speaking-part1-editor">
                   <div className="speaking-manual-section-heading">
-                    <strong>Part 1 问题与范例答案</strong>
+                    <strong>
+                      {manualForm.part === 'Part 1'
+                        ? 'Part 1 问题与范例答案'
+                        : manualForm.part === 'Part 3'
+                        ? 'Part 3 深度拓展讨论问题与范例答案'
+                        : 'Part 3 深度拓展讨论分问题（可选录入）'}
+                    </strong>
                     <button
                       type="button"
                       className="speaking-secondary-action"
                       onClick={() =>
                         setManualQuestionDraft((current) => [
                           ...current,
-                          { question: '', sampleAnswer: '', perspective: '思路一' },
+                          { question: '', sampleAnswer: '', perspective: PERSPECTIVE_OPTIONS[current.length % 4] || '思路一' },
                         ])
                       }
                     >
@@ -1701,7 +2180,7 @@ export default function SpeakingStudio({
                             )
                           }
                           rows="2"
-                          placeholder="例如 Do you enjoy visiting art galleries?"
+                          placeholder={manualForm.part === 'Part 3' ? '例如 Why is public transport vital for modern cities?' : '例如 Do you enjoy visiting art galleries?'}
                         />
                       </label>
                       <label className="speaking-text-label">
@@ -1723,103 +2202,9 @@ export default function SpeakingStudio({
                     </div>
                   ))}
                 </div>
-              ) : (
-                <>
-                  <label className="speaking-text-label">
-                    提纲要点（每行一项）
-                    <textarea
-                      className="speaking-question-input"
-                      value={manualForm.cueCardText}
-                      onChange={(event) => updateManualField('cueCardText', event.target.value)}
-                      rows="4"
-                      placeholder={'Where you went and when\nWhat transport you took\nWhy it was memorable'}
-                    />
-                  </label>
-                  <div className="speaking-text-label">
-                    示范音频（可选）
-                    <div className="speaking-manual-audio">
-                      <select
-                        value={manualForm.audioUrl}
-                        onChange={(event) => updateManualField('audioUrl', event.target.value)}
-                      >
-                        <option value="">不绑定音频</option>
-                        {audioFiles.map((file) => (
-                          <option key={file.url} value={file.url}>
-                            {file.name}
-                          </option>
-                        ))}
-                      </select>
-                      <label className="speaking-upload-button">
-                        上传音频
-                        <input
-                          type="file"
-                          accept="audio/*,.mp3,.wav,.m4a,.ogg"
-                          onChange={uploadSpeakingAudio}
-                        />
-                      </label>
-                    </div>
-                  </div>
-                  <label className="speaking-text-label">
-                    口语范例答案
-                    <textarea
-                      className="speaking-answer-input"
-                      value={manualForm.sampleAnswer}
-                      onChange={(event) => updateManualField('sampleAnswer', event.target.value)}
-                      placeholder="自然口语化、连贯且地道的 IELTS 7.5 水平高分范文..."
-                    />
-                  </label>
-                </>
               )}
 
-              {!manualForm.id && !manualForm.editingSetId && (
-                <div className="speaking-merge-options">
-                  <label>
-                    🔗 合并方式
-                    <select
-                      value={mergeMode}
-                      onChange={(event) => {
-                        setMergeMode(event.target.value)
-                        if (event.target.value === 'merge' && mergeTargetId) {
-                          setMergeLabel(`Set ${(getLessonSets(lessons.find((item) => item.id === mergeTargetId)).length || 1) + 1}`)
-                        }
-                      }}
-                    >
-                      <option value="independent">作为独立新口语题创建</option>
-                      <option value="merge">合并到已有相似口语题中</option>
-                    </select>
-                  </label>
-                  {mergeMode === 'merge' && (
-                    <>
-                      <label>
-                        目标口语题
-                        <select
-                          value={mergeTargetId}
-                          onChange={(event) => {
-                            const target = lessons.find((item) => item.id === event.target.value)
-                            setMergeTargetId(event.target.value)
-                            setMergeLabel(`Set ${(getLessonSets(target).length || 1) + 1}`)
-                          }}
-                        >
-                          <option value="">请选择</option>
-                          {lessons.map((item) => (
-                            <option key={item.id} value={item.id}>
-                              {getSpeakingTitle(item)} · {item.topicCategory} · {item.part}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
-                      <label>
-                        子集标签
-                        <input
-                          value={mergeLabel}
-                          onChange={(event) => setMergeLabel(event.target.value)}
-                          placeholder="Set 2"
-                        />
-                      </label>
-                    </>
-                  )}
-                </div>
-              )}
+
 
               <div className="speaking-vocab-editor">
                 <div className="speaking-manual-section-heading">
@@ -2043,44 +2428,59 @@ export default function SpeakingStudio({
             </div>
           ) : (
             <>
-              <div className="speaking-lesson-meta">
-                <span>{displayLesson.topicCategory}</span>
-                <span>{displayLesson.part}</span>
-              </div>
-              {lessonSets.length > 1 && selectedSetId === 'all'
-                ? lessonSets.map((set) => (
-                    <section className="speaking-set-content" key={set.id}>
-                      <h4>{set.label}</h4>
-                      {set.part === 'Part 1' ? (
-                        <PartOneContent
-                          lesson={set}
-                          revealedAnswers={revealedAnswers}
-                          onToggleAnswer={toggleAnswer}
-                        />
-                      ) : (
-                        <PartTwoContent
-                          lesson={set}
-                          revealed={Boolean(revealedAnswers[`${set.id}:sample-answer`])}
-                          onToggleAnswer={toggleAnswer}
-                        />
+              <div className="speaking-content-header-bar">
+                <div className="speaking-lesson-meta">
+                  <span className="speaking-topic-capsule-badge">
+                    {displayLesson.topicCategory} · {displayLesson.part}
+                  </span>
+                </div>
+                {speakingPartType(displayLesson) === 'Part 2 & 3' && (
+                  <div className="speaking-subpart-switcher" role="tablist" aria-label="选择练习阶段">
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={subPartTab === 'part2'}
+                      className={`speaking-subpart-pill ${subPartTab === 'part2' ? 'active' : ''}`}
+                      onClick={() => setSubPartTab('part2')}
+                    >
+                      📖 Part 2 个人陈述
+                    </button>
+                    <button
+                      type="button"
+                      role="tab"
+                      aria-selected={subPartTab === 'part3'}
+                      className={`speaking-subpart-pill ${subPartTab === 'part3' ? 'active' : ''}`}
+                      onClick={() => setSubPartTab('part3')}
+                    >
+                      💬 Part 3 深度讨论
+                      {displayLesson.questions?.length > 0 && (
+                        <span className="speaking-subpart-count">({displayLesson.questions.length})</span>
                       )}
-                    </section>
-                  ))
-                : displayLesson.part === 'Part 1' ? (
-                    <PartOneContent
-                      lesson={displayLesson}
-                      revealedAnswers={revealedAnswers}
-                      onToggleAnswer={toggleAnswer}
-                    />
-                  ) : (
-                    <PartTwoContent
-                      lesson={displayLesson}
-                      answerDraft={answerDraft}
-                      onAnswerChange={setAnswerDraft}
-                      revealed={Boolean(revealedAnswers[`${displayLesson.id}:sample-answer`])}
-                      onToggleAnswer={toggleAnswer}
-                    />
-                  )}
+                    </button>
+                  </div>
+                )}
+              </div>
+              {displayLesson.part === 'Part 1' ? (
+                <PartOneContent
+                  lesson={displayLesson}
+                  revealedAnswers={revealedAnswers}
+                  onToggleAnswer={toggleAnswer}
+                />
+              ) : subPartTab === 'part3' ? (
+                <PartThreeContent
+                  lesson={displayLesson}
+                  revealedAnswers={revealedAnswers}
+                  onToggleAnswer={toggleAnswer}
+                />
+              ) : (
+                <PartTwoContent
+                  lesson={displayLesson}
+                  answerDraft={answerDraft}
+                  onAnswerChange={setAnswerDraft}
+                  revealed={Boolean(revealedAnswers[`${displayLesson.id}:sample-answer`])}
+                  onToggleAnswer={toggleAnswer}
+                />
+              )}
               <div className="speaking-offline-actions">
                 <button
                   className="speaking-parse-button"
@@ -2138,10 +2538,24 @@ export default function SpeakingStudio({
                   </button>
                   <button
                     type="button"
+                    className={`speaking-template-pill ${templateTab === 'Part 2' ? 'active' : ''}`}
+                    onClick={() => setTemplateTab('Part 2')}
+                  >
+                    🎙️ Part 2 模板
+                  </button>
+                  <button
+                    type="button"
+                    className={`speaking-template-pill ${templateTab === 'Part 3' ? 'active' : ''}`}
+                    onClick={() => setTemplateTab('Part 3')}
+                  >
+                    💬 Part 3 模板
+                  </button>
+                  <button
+                    type="button"
                     className={`speaking-template-pill ${templateTab === 'Part 2 & 3' ? 'active' : ''}`}
                     onClick={() => setTemplateTab('Part 2 & 3')}
                   >
-                    🎯 Part 2 &amp; 3 模板
+                    🎯 Part 2 &amp; 3 联合模板
                   </button>
                 </div>
                 <button
@@ -2216,7 +2630,17 @@ export default function SpeakingStudio({
                     </button>
                   </div>
                   <pre className="speaking-template-pre">
-                    {JSON.stringify(templateTab === 'Part 1' ? PART1_FULL_TEMPLATE : PART23_FULL_TEMPLATE, null, 2)}
+                    {JSON.stringify(
+                      templateTab === 'Part 1'
+                        ? PART1_FULL_TEMPLATE
+                        : templateTab === 'Part 2'
+                        ? PART2_FULL_TEMPLATE
+                        : templateTab === 'Part 3'
+                        ? PART3_FULL_TEMPLATE
+                        : PART23_FULL_TEMPLATE,
+                      null,
+                      2
+                    )}
                   </pre>
                 </div>
               )}
@@ -2276,47 +2700,7 @@ export default function SpeakingStudio({
                 </div>
               )}
 
-              {!editing && !manualForm && (
-                <div className="speaking-merge-options">
-                  <label>
-                    🔗 合并方式
-                    <select value={mergeMode} onChange={(event) => setMergeMode(event.target.value)}>
-                      <option value="independent">作为独立新口语题创建</option>
-                      <option value="merge">合并到已有相似口语题中</option>
-                    </select>
-                  </label>
-                  {mergeMode === 'merge' && (
-                    <>
-                      <label>
-                        目标口语题
-                        <select
-                          value={mergeTargetId}
-                          onChange={(event) => {
-                            const target = lessons.find((item) => item.id === event.target.value)
-                            setMergeTargetId(event.target.value)
-                            setMergeLabel(`Set ${(getLessonSets(target).length || 1) + 1}`)
-                          }}
-                        >
-                          <option value="">请选择</option>
-                          {lessons.map((item) => (
-                            <option key={item.id} value={item.id}>
-                              {getSpeakingTitle(item)} · {item.topicCategory} · {item.part}
-                            </option>
-                          ))}
-                        </select>
-                      </label>
-                      <label>
-                        子集标签
-                        <input
-                          value={mergeLabel}
-                          onChange={(event) => setMergeLabel(event.target.value)}
-                          placeholder="Set 2"
-                        />
-                      </label>
-                    </>
-                  )}
-                </div>
-              )}
+
 
               <div className="speaking-import-footer">
                 <span>
@@ -2390,17 +2774,48 @@ export default function SpeakingStudio({
                   <span className="eyebrow-small">ENGLISH SPEAKING OUTLINE</span>
                   <h3>口语思维导图</h3>
                 </div>
-                <span className="speaking-map-tag">{editing ? 'LIVE PREVIEW' : 'CLICK TO EXPAND'}</span>
+                <div className="speaking-mindmap-view-switcher" role="tablist" aria-label="导图展示范围">
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={mindMapViewMode === 'lesson'}
+                    className={`speaking-mindmap-pill ${mindMapViewMode === 'lesson' ? 'active' : ''}`}
+                    onClick={() => setMindMapViewMode('lesson')}
+                  >
+                    🎯 当前题目导图
+                  </button>
+                  <button
+                    type="button"
+                    role="tab"
+                    aria-selected={mindMapViewMode === 'category'}
+                    className={`speaking-mindmap-pill ${mindMapViewMode === 'category' ? 'active' : ''}`}
+                    onClick={() => setMindMapViewMode('category')}
+                  >
+                    🌐 本大类总览导图
+                  </button>
+                </div>
               </div>
               <MindMap
-                key={`${lesson.id}-${activeSet?.id ?? 'all'}`}
-                data={mindMapPreview}
-                editable
-                dirty={Boolean(mindMapDrafts[mapKey])}
-                referenceText={displayLesson.sampleAnswer || (displayLesson.questions ?? []).map((q) => q.sampleAnswer).join('\n')}
-                onChange={(map) => onMindMapDraftChange(mapKey, map)}
-                onSave={() => onMindMapSave('speaking', lesson, activeSet?.id ?? '', mindMapDrafts[mapKey])}
-                onReset={() => onMindMapReset(mapKey)}
+                key={`${lesson.id}-${mindMapViewMode}-${selectedTopic}`}
+                data={mindMapViewMode === 'category' ? categoryOverviewMap : mindMapPreview}
+                editable={mindMapViewMode === 'lesson' && !editing}
+                dirty={mindMapViewMode === 'lesson' && Boolean(mindMapDrafts[mapKey])}
+                referenceText={mindMapViewMode === 'category' ? '' : (displayLesson.sampleAnswer || (displayLesson.questions ?? []).map((q) => q.sampleAnswer).join('\n'))}
+                onChange={(map) => {
+                  if (mindMapViewMode === 'lesson') {
+                    onMindMapDraftChange(mapKey, map)
+                  }
+                }}
+                onSave={() => {
+                  if (mindMapViewMode === 'lesson') {
+                    onMindMapSave('speaking', lesson, '', mindMapDrafts[mapKey])
+                  }
+                }}
+                onReset={() => {
+                  if (mindMapViewMode === 'lesson') {
+                    onMindMapReset(mapKey)
+                  }
+                }}
               />
             </section>
           )}
@@ -2518,30 +2933,7 @@ export default function SpeakingStudio({
                 <X size={18} />
               </button>
             </div>
-            {lessonSets.length > 1 && (
-              <>
-                <label>
-                  <input
-                    type="radio"
-                    checked={deleteScope === 'set'}
-                    onChange={() => setDeleteScope('set')}
-                    disabled={!activeSet}
-                  />
-                  仅删除当前选中的子题集（{activeSet?.label ?? '请先选择子集'}）
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    checked={deleteScope === 'all'}
-                    onChange={() => setDeleteScope('all')}
-                  />
-                  删除整道口语题全部内容
-                </label>
-              </>
-            )}
-            {lessonSets.length <= 1 && (
-              <p>将删除当前口语题的本地 JSON 文件及浏览器题库记录。</p>
-            )}
+            <p>将删除当前口语题《{getSpeakingTitle(lesson)}》的本地 JSON 文件及题库记录。</p>
             <label>
               <input
                 type="checkbox"
@@ -2572,66 +2964,7 @@ export default function SpeakingStudio({
         </div>
       )}
 
-      {mergeOpen && (
-        <div className="speaking-modal-backdrop" role="presentation">
-          <section
-            className="speaking-confirm-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="merge-speaking-title"
-          >
-            <div className="speaking-result-heading">
-              <div>
-                <span className="eyebrow-small">MERGE SPEAKING SETS</span>
-                <h3 id="merge-speaking-title">合并到其他题</h3>
-              </div>
-              <button
-                className="speaking-close-import"
-                aria-label="关闭"
-                onClick={() => setMergeOpen(false)}
-              >
-                <X size={18} />
-              </button>
-            </div>
-            <label>
-              目标口语题
-              <select
-                value={mergeTargetId}
-                onChange={(event) => setMergeTargetId(event.target.value)}
-              >
-                {lessons
-                  .filter((item) => item.id !== lesson.id)
-                  .map((item) => (
-                    <option key={item.id} value={item.id}>
-                      {item.topicCategory} · {item.part}
-                    </option>
-                  ))}
-              </select>
-            </label>
-            <label>
-              子集标签
-              <input
-                value={mergeLabel}
-                onChange={(event) => setMergeLabel(event.target.value)}
-              />
-            </label>
-            <div className="speaking-modal-actions">
-              <button
-                className="speaking-secondary-action"
-                onClick={() => setMergeOpen(false)}
-              >
-                取消
-              </button>
-              <button
-                className="speaking-parse-button"
-                onClick={mergeCurrentLesson}
-              >
-                确认合并
-              </button>
-            </div>
-          </section>
-        </div>
-      )}
+
     </section>
   )
 }

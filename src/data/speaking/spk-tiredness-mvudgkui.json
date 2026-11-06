@@ -1,0 +1,149 @@
+{
+  "id": "spk-tiredness-mvudgkui",
+  "title": "Tiredness",
+  "part": "Part 1",
+  "topicCategory": "个人与日常生活",
+  "questionPrompt": "Tiredness",
+  "questions": [
+    {
+      "question": "Do you often feel tired?",
+      "sampleAnswer": "I’d say I do sometimes, especially in the middle of the week, because my schedule is quite busy. I usually try to catch up on sleep at the weekend.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "When would you feel tired?",
+      "sampleAnswer": "I tend to feel tired after a long day of classes or after staying up late. It usually happens when I haven’t had enough sleep or I’ve been staring at screens for hours.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "What do you do when you feel tired?",
+      "sampleAnswer": "What I usually do is take a short nap or go for a walk to refresh myself. I also tend to make a cup of tea and listen to music to help me relax.",
+      "perspective": "思路二"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "I’d say I do sometimes, especially in the middle of the week, because my schedule is quite busy. I usually try to catch up on sleep at the weekend.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "catch up on sleep",
+      "pos": "v. phr.",
+      "chinese": "补觉",
+      "exampleSentence": "My weekly schedule is quite hectic, so I usually try to catch up on sleep at the weekend.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-tiredness-mvudgkui"
+    },
+    {
+      "id": "sv-2",
+      "term": "in the middle of the week",
+      "pos": "prep. phr.",
+      "chinese": "在周中阶段",
+      "exampleSentence": "I tend to hit a productivity wall especially in the middle of the week.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-tiredness-mvudgkui"
+    },
+    {
+      "id": "sv-3",
+      "term": "stare at screens for hours",
+      "pos": "v. phr.",
+      "chinese": "长时间盯着屏幕",
+      "exampleSentence": "Staring at computer screens for hours without breaks inevitably strains my eyes.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-tiredness-mvudgkui"
+    },
+    {
+      "id": "sv-4",
+      "term": "refresh myself",
+      "pos": "v. phr.",
+      "chinese": "让自己恢复精力/提神",
+      "exampleSentence": "Taking a ten-minute brisk walk outdoors helps refresh myself after intense work.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-tiredness-mvudgkui"
+    },
+    {
+      "id": "sv-5",
+      "term": "take a short nap",
+      "pos": "v. phr.",
+      "chinese": "小憩片刻/打个盹",
+      "exampleSentence": "What I usually do is take a short power nap to recharge my energy.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-tiredness-mvudgkui"
+    }
+  ],
+  "mindMap": {
+    "label": "Fatigue Management & Daily Recovery",
+    "children": [
+      {
+        "label": "Fatigue Triggers",
+        "children": [
+          {
+            "label": "Intensive coursework and study schedules",
+            "children": []
+          },
+          {
+            "label": "Digital eye strain from prolonged screen exposure",
+            "children": []
+          },
+          {
+            "label": "Staying up late under deadlines",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Weekly Rhythm",
+        "children": [
+          {
+            "label": "Mid-week exhaustion peaks",
+            "children": []
+          },
+          {
+            "label": "Catching up on restorative rest during weekends",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Physical Recovery",
+        "children": [
+          {
+            "label": "Power naps to recharge alertness",
+            "children": []
+          },
+          {
+            "label": "Outdoor strolls for fresh air circulation",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Mental Unwinding",
+        "children": [
+          {
+            "label": "Brewing hot herbal tea",
+            "children": []
+          },
+          {
+            "label": "Immersing in gentle music playlists",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=900&auto=format&fit=crop&q=80",
+      "caption": "Cozy Bedroom Rest and Deep Sleep"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=900&auto=format&fit=crop&q=80",
+      "caption": "Peaceful Nature Walk to Recharge"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=900&auto=format&fit=crop&q=80",
+      "caption": "Afternoon Tea and Relaxation"
+    }
+  ]
+}

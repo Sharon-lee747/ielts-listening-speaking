@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { AlertCircle, Check, Clipboard, Download, FileAudio, FileJson, Headphones, Mic2, Save, Trash2, Upload } from 'lucide-react'
 import MindMap from './MindMap.jsx'
+import SpeakingImportStudio from './SpeakingImportStudio.jsx'
 import { normalizeQuestionType } from '../data/questionTypes.js'
 import { attachTranscriptReferences, parseTranscript } from '../data/transcriptMatching.js'
 import { cleanListeningTitle, getListeningPart, listeningParts, sortByEnglishTitle } from '../data/lessonIndex.js'
@@ -95,7 +96,36 @@ function formatQuestionAnswer(question) {
   }).join(' · ')
 }
 
-export default function QuestionBankStudio({ topics, audioFiles, audioLibraryError, onUploadAudio, onUploadMapImage, onDeleteMapImage, onDeleteAudio, onSaveTest, onSaveTranscript, onUpdateTestPart, onNavigateSpeaking }) {
+export default function QuestionBankStudio({
+  topics,
+  audioFiles,
+  audioLibraryError,
+  onUploadAudio,
+  onUploadMapImage,
+  onDeleteMapImage,
+  onDeleteAudio,
+  onSaveTest,
+  onSaveTranscript,
+  onUpdateTestPart,
+  onNavigateSpeaking,
+  // Speaking import workbench props
+  importTab: controlledImportTab,
+  onImportTabChange,
+  speakingLessons = [],
+  editingSpeakingLesson = null,
+  onUploadSpeakingImage,
+  onSaveSpeakingLesson,
+  onSpeakingSaveSuccess,
+  onCancelSpeakingEdit,
+}) {
+  const [internalImportTab, setInternalImportTab] = useState('listening')
+  const activeImportTab = controlledImportTab !== undefined ? controlledImportTab : internalImportTab
+
+  function setImportTab(tab) {
+    if (onImportTabChange) onImportTabChange(tab)
+    else setInternalImportTab(tab)
+  }
+
   const [title, setTitle] = useState('')
   const [draftId] = useState(() => `custom-${Date.now()}`)
   const [topicCategory, setTopicCategory] = useState('')
@@ -298,8 +328,44 @@ export default function QuestionBankStudio({ topics, audioFiles, audioLibraryErr
   }
 
   return <section className="question-bank-studio">
-    <div className="question-bank-heading"><div><span className="eyebrow-small">TEACHER GEMINI RESEARCH DESK</span><h2>教研导入台</h2><div className="bank-import-tabs"><button className="active"><Headphones size={15} />听力材料导入</button><button onClick={onNavigateSpeaking}><Mic2 size={15} />口语材料导入</button></div></div><span className="bank-offline-badge"><span />OFFLINE IMPORT</span></div>
+    <div className="question-bank-heading">
+      <div>
+        <span className="eyebrow-small">TEACHER GEMINI RESEARCH DESK</span>
+        <h2>教研导入台</h2>
+        <div className="bank-import-tabs">
+          <button
+            type="button"
+            className={activeImportTab === 'listening' ? 'active' : ''}
+            onClick={() => setImportTab('listening')}
+          >
+            <Headphones size={15} />听力材料导入
+          </button>
+          <button
+            type="button"
+            className={activeImportTab === 'speaking' ? 'active' : ''}
+            onClick={() => setImportTab('speaking')}
+          >
+            <Mic2 size={15} />口语材料导入
+          </button>
+        </div>
+      </div>
+      <span className="bank-offline-badge"><span />OFFLINE IMPORT</span>
+    </div>
 
+    {activeImportTab === 'speaking' ? (
+      <SpeakingImportStudio
+        initialLesson={editingSpeakingLesson}
+        lessons={speakingLessons}
+        audioFiles={audioFiles}
+        audioLibraryError={audioLibraryError}
+        onUploadAudio={onUploadAudio}
+        onDeleteAudio={onDeleteAudio}
+        onUploadSpeakingImage={onUploadSpeakingImage}
+        onSaveSpeakingLesson={onSaveSpeakingLesson}
+        onSaveSuccess={onSpeakingSaveSuccess}
+        onCancelEdit={onCancelSpeakingEdit}
+      />
+    ) : (
     <div className="question-bank-grid">
       <section className="bank-input-panel">
         <div className="bank-panel-heading"><span className="section-index">01</span><div><h3>题库输入</h3><p>Set details and paste the source material</p></div></div>
@@ -346,6 +412,7 @@ export default function QuestionBankStudio({ topics, audioFiles, audioLibraryErr
         </div>
       </section>
     </div>
+    )}
 
   </section>
 }

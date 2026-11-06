@@ -277,8 +277,9 @@ function localStorageApi() {
 }
 
 export default defineConfig({
+  base: '/ielts-listening-speaking/',
   plugins: [react(), localStorageApi()],
-server: {
+  server: {
     host: '0.0.0.0',
     open: true
   }

@@ -1,0 +1,141 @@
+{
+  "id": "spk-rubbish-recycling-mvuamptl",
+  "title": "Rubbish & recycling",
+  "part": "Part 1",
+  "topicCategory": "自然与环境保护",
+  "questionPrompt": "Rubbish & recycling",
+  "questions": [
+    {
+      "question": "What do you do when you see rubbish on the street?",
+      "sampleAnswer": "What I usually do is pick it up if it’s easy, and put it in the nearest bin. I tend to do this because litter really bothers me, and small actions make a difference.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "How do you recycle things like paper and plastic?",
+      "sampleAnswer": "I usually separate them at home — paper in one bag and plastic in another — and take them to the recycling bins near my building. I tend to wash plastic bottles first so they’re clean.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "Is waste sorting common in your country?",
+      "sampleAnswer": "Generally speaking, yes, it’s becoming quite common, especially in big cities. Many communities now have different bins, and schools teach children how to sort waste. So I think it’s gradually becoming a habit.",
+      "perspective": "思路四"
+    },
+    {
+      "question": "Did you recycle when you were a kid?",
+      "sampleAnswer": "Yes, I remember I did a little. It was when I was in primary school, and the school taught us to collect paper and plastic for recycling. I felt it was a small way to help the environment.",
+      "perspective": "思路三"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "What I usually do is pick it up if it’s easy, and put it in the nearest bin. I tend to do this because litter really bothers me, and small actions make a difference.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "make a difference",
+      "pos": "idiom",
+      "chinese": "发挥作用/产生积极改变",
+      "exampleSentence": "Individual actions might seem small, but collectively they make a difference.",
+      "topicCategory": "自然与环境保护",
+      "sourceTestId": "spk-rubbish-recycling-mvuamptl"
+    },
+    {
+      "id": "sv-3",
+      "term": "separate ... at home",
+      "pos": "v. phr.",
+      "chinese": "在家里做好....分类",
+      "exampleSentence": "We separate recyclables at home before taking them downstairs.",
+      "topicCategory": "自然与环境保护",
+      "sourceTestId": "spk-rubbish-recycling-mvuamptl"
+    },
+    {
+      "id": "sv-4",
+      "term": "waste sorting",
+      "pos": "n. phr.",
+      "chinese": "垃圾分类",
+      "exampleSentence": "Waste sorting has been heavily promoted across major Chinese cities.",
+      "topicCategory": "自然与环境保护",
+      "sourceTestId": "spk-rubbish-recycling-mvuamptl"
+    },
+    {
+      "id": "sv-5",
+      "term": "gradually becoming a habit",
+      "pos": "v. phr.",
+      "chinese": "正逐渐成为一种习惯",
+      "exampleSentence": "With ongoing campaigns, classifying daily trash is gradually becoming a habit.",
+      "topicCategory": "自然与环境保护",
+      "sourceTestId": "spk-rubbish-recycling-mvuamptl"
+    }
+  ],
+  "mindMap": {
+    "label": "Waste Management & Environmental Action",
+    "children": [
+      {
+        "label": "Street Behavior",
+        "children": [
+          {
+            "label": "Picking up litter proactively",
+            "children": []
+          },
+          {
+            "label": "Belief in the impact of small actions",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Domestic Recycling",
+        "children": [
+          {
+            "label": "Bagging paper and plastic separately",
+            "children": []
+          },
+          {
+            "label": "Rinsing drink bottles clean",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "National Phenomenon",
+        "children": [
+          {
+            "label": "Widespread color-coded community bins",
+            "children": []
+          },
+          {
+            "label": "School programs nurturing daily habits",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Childhood Memories",
+        "children": [
+          {
+            "label": "Primary school paper recycling drives",
+            "children": []
+          },
+          {
+            "label": "Early awareness of eco-protection",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=900&auto=format&fit=crop&q=80",
+      "caption": "Color Coded Urban Waste Sorting Bins"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=900&auto=format&fit=crop&q=80",
+      "caption": "Sorted Plastic Bottles and Recyclable Materials"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&auto=format&fit=crop&q=80",
+      "caption": "Clean Neighborhood Park with Eco-friendly Bins"
+    }
+  ]
+}

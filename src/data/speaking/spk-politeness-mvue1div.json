@@ -1,0 +1,122 @@
+{
+  "id": "spk-politeness-mvue1div",
+  "title": "Politeness",
+  "part": "Part 1",
+  "topicCategory": "个人与日常生活",
+  "questionPrompt": "Politeness",
+  "questions": [
+    {
+      "question": "How did you learn to be polite as a child?",
+      "sampleAnswer": "I remember I mainly learned it at home and at school. It was when I was young, and my parents always reminded me to say “please” and “thank you”, so it gradually became a habit.",
+      "perspective": "思路三"
+    },
+    {
+      "question": "Do you think being polite is very important?",
+      "sampleAnswer": "Yes, I think it’s really important, because it makes everyday contact smoother and shows respect. A simple “thank you” can make the whole interaction much more pleasant.",
+      "perspective": "思路一"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "I remember I mainly learned it at home and at school. It was when I was young, and my parents always reminded me to say “please” and “thank you”, so it gradually became a habit.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "everyday contact",
+      "pos": "n. phr.",
+      "chinese": "日常交往/日常人际接触",
+      "exampleSentence": "Being polite makes everyday contact smoother and demonstrates basic respect.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-politeness-mvue1div"
+    },
+    {
+      "id": "sv-3",
+      "term": "gradually became a habit",
+      "pos": "v. phr.",
+      "chinese": "逐渐变成了一种习惯",
+      "exampleSentence": "My parents reminded me regularly, so greeting elders gradually became a habit.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-politeness-mvue1div"
+    },
+    {
+      "id": "sv-4",
+      "term": "make ... smoother",
+      "pos": "v. phr.",
+      "chinese": "让……更顺畅/减少摩擦",
+      "exampleSentence": "Courteous language makes communication much smoother between strangers.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-politeness-mvue1div"
+    },
+    {
+      "id": "sv-5",
+      "term": "show respect",
+      "pos": "v. phr.",
+      "chinese": "表示尊重",
+      "exampleSentence": "Practicing polite manners is the most direct way to show respect to others.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-politeness-mvue1div"
+    }
+  ],
+  "mindMap": {
+    "label": "Politeness & Social Norms",
+    "children": [
+      {
+        "label": "Upbringing & Foundations",
+        "children": [
+          {
+            "label": "Home and school early guidance",
+            "children": []
+          },
+          {
+            "label": "Saying 'please' and 'thank you'",
+            "children": []
+          },
+          {
+            "label": "Forming subconscious daily habits",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Social Significance",
+        "children": [
+          {
+            "label": "Easing friction in public interactions",
+            "children": []
+          },
+          {
+            "label": "Expressing basic human respect",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Everyday Impact",
+        "children": [
+          {
+            "label": "Small verbal gestures",
+            "children": []
+          },
+          {
+            "label": "Cultivating pleasant interpersonal atmospheres",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&auto=format&fit=crop&q=80",
+      "caption": "Warm Handshake and Professional Courtesy"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=900&auto=format&fit=crop&q=80",
+      "caption": "Friendly Smiling People in Daily Conversation"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&auto=format&fit=crop&q=80",
+      "caption": "Classroom Setting and Childhood Etiquette"
+    }
+  ]
+}

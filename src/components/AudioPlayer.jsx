@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { AudioLines, Pause, Play, RotateCcw, RotateCw, Trash2, Upload, Volume2 } from 'lucide-react'
+import { AudioLines, Pause, Play, RotateCcw, RotateCw } from 'lucide-react'
 import { encodeAudioUrl } from '../data/localDevApi.js'
 
 function formatTime(seconds) {
@@ -144,12 +144,10 @@ function WaveformBar({ currentTime, duration, keySentences = [], onSeek, audioSe
   )
 }
 
-export default function AudioPlayer({ audioUrl, audioFiles, audioLibraryError, duration, currentTime, playing, rate, activeClip, keySentences = [], onBindAudio, onUploadAudio, onDeleteAudio, onToggle, onSetPlaying, onSeek, onRateChange, onPlaybackEnd }) {
+export default function AudioPlayer({ audioUrl, duration, currentTime, playing, rate, activeClip, keySentences = [], onToggle, onSetPlaying, onSeek, onRateChange, onPlaybackEnd }) {
   const audioRef = useRef(null)
   const [audioState, setAudioState] = useState(audioUrl ? 'loading' : 'missing')
   const [audioDuration, setAudioDuration] = useState(0)
-  const [bindingError, setBindingError] = useState('')
-  const [uploading, setUploading] = useState(false)
   const source = encodeAudioUrl(audioUrl)
   const timelineDuration = audioDuration || duration
   let currentFilename = audioUrl?.split('/').pop() ?? ''
@@ -158,7 +156,6 @@ export default function AudioPlayer({ audioUrl, audioFiles, audioLibraryError, d
   useEffect(() => {
     setAudioState(audioUrl ? 'loading' : 'missing')
     setAudioDuration(0)
-    setBindingError('')
   }, [audioUrl])
 
   useEffect(() => {
@@ -193,40 +190,6 @@ export default function AudioPlayer({ audioUrl, audioFiles, audioLibraryError, d
       if (audioRef.current.paused) audioRef.current.play().then(() => onSetPlaying(true)).catch(() => setAudioState('error'))
       else { audioRef.current.pause(); onSetPlaying(false) }
     } else onToggle()
-  }
-
-  async function bindSelection(url) {
-    if (!url) return
-    setBindingError('')
-    try {
-      const result = await onBindAudio(url)
-      if (!result) throw new Error('浏览器缓存写入失败。')
-      if (!result.diskSaved) setBindingError(`已绑定并保存到浏览器，硬盘写入失败：${result.diskError}`)
-    } catch (error) { setBindingError(error.message) }
-  }
-
-  async function uploadSelectedFile(event) {
-    const file = event.target.files?.[0]
-    if (!file) return
-    setUploading(true)
-    setBindingError('')
-    try {
-      const result = await onUploadAudio(file)
-      const binding = await onBindAudio(result.url)
-      if (!binding) throw new Error('音频已上传，但浏览器题库写入失败。')
-      if (!binding.diskSaved) setBindingError(`已上传并绑定，硬盘题库写入失败：${binding.diskError}`)
-    } catch (error) { setBindingError(`上传失败：${error.message}`) }
-    finally { setUploading(false); event.target.value = '' }
-  }
-
-  async function deleteSelectedAudio() {
-    if (!currentFilename || !window.confirm(`确定从 public/audio/ 永久删除“${currentFilename}”？`)) return
-    setBindingError('')
-    try {
-      await onDeleteAudio(currentFilename)
-      setAudioState('missing')
-      setBindingError(`已删除 ${currentFilename}。如其他题目也在使用此音频，其音频引用不会自动更改。`)
-    } catch (error) { setBindingError(`删除音频失败：${error.message}`) }
   }
 
   function handleTimeUpdate() {
@@ -287,22 +250,6 @@ export default function AudioPlayer({ audioUrl, audioFiles, audioLibraryError, d
           {[0.75, 1, 1.25, 1.5].map((speed) => <option key={speed} value={speed}>{speed.toFixed(speed === 1 ? 1 : 2).replace(/0$/, '')}x</option>)}
         </select>
       </label>
-      <div className={`audio-connection-status ${realAudioConnected ? 'connected' : audioState === 'loading' ? 'loading' : 'fallback'}`} role="status">
-        {realAudioConnected ? <><Volume2 size={14} />真实音频已连接 · {currentFilename}</> : audioState === 'loading' ? <>正在连接真实音频 · {currentFilename}</> : <>⚠ 当前未绑定有效音频（无声模拟进度模式）</>}
-      </div>
-      <div className="audio-binding-controls">
-        <label htmlFor="player-audio-select">🎵 选择 public/audio 下的音频</label>
-        <select id="player-audio-select" value={encodeAudioUrl(audioUrl || '')} onChange={(e) => bindSelection(e.target.value)}>
-          <option value="">选择音频文件</option>
-          {audioFiles.map((file) => <option value={file.url} key={file.url}>{file.name}</option>)}
-        </select>
-        <button className="audio-delete-button" type="button" disabled={!audioFiles.some((f) => f.name === currentFilename)} onClick={deleteSelectedAudio}><Trash2 size={14} />删除此音频</button>
-        <label className="audio-upload-button">
-          <Upload size={14} />{uploading ? '上传中...' : '📂 上传本地音频'}
-          <input type="file" accept="audio/*,.mp3,.wav,.m4a,.ogg,.aac,.flac" disabled={uploading} onChange={uploadSelectedFile} />
-        </label>
-        {(bindingError || audioLibraryError) && <small>{bindingError || audioLibraryError}</small>}
-      </div>
       {audioState === 'error' && audioUrl && <div className="audio-load-warning">无法加载：{currentFilename}</div>}
     </section>
   )

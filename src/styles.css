@@ -114,3 +114,15 @@ body{color:#0f172a;background:#f8fafc;background-image:none}
   .fill-sheet-heading{padding:14px}
   .inline-answer-input{width:clamp(90px,38vw,160px)}
 }
+
+
+@keyframes companionFloat {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-6px) scale(1.02); }
+}
+.pocket-companion-svg {
+  display: block;
+  margin: 0 auto;
+  animation: companionFloat 3.2s ease-in-out infinite alternate;
+  will-change: transform;
+}

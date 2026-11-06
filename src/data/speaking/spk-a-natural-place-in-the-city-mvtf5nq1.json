@@ -1,0 +1,194 @@
+{
+  "id": "spk-a-natural-place-in-the-city-mvtf5nq1",
+  "title": "A Natural Place in the City",
+  "part": "Part 2 & 3",
+  "topicCategory": "地点与自然",
+  "questionPrompt": "Part 2: Describe a natural place in your city that you enjoy visiting.\nYou should say:\nWhere the place is\nWhen and why you went there\nWhat the place was like\nHow you felt about the place",
+  "questions": [
+    {
+      "question": "Why do people have very different feelings about the same place?",
+      "sampleAnswer": "People experience urban spaces through distinct emotional filters and sensory sensitivities. An introverted reader might perceive a secluded riverbank as a restorative sanctuary, whereas someone seeking dynamic social interaction might find that same quietude desolate or uninspiring.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "How have public places changed in recent years?",
+      "sampleAnswer": "Public spaces have progressively shifted from utilitarian paved plazas toward multi-functional ecological corridors. Modern developments integrate permeable landscaping, ambient solar-powered lighting, and pedestrianized greenbelts rather than sterile concrete walkways.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "What can cities do to make places more pleasant for residents?",
+      "sampleAnswer": "Municipalities should prioritize biophilic architecture and accessible neighborhood pocket parks. Restricting vehicular congestion adjacent to civic greenspaces and incorporating shaded seating significantly enhances community well-being and daily livability.",
+      "perspective": "思路三"
+    }
+  ],
+  "cueCardPoints": [
+    "Where the place is",
+    "When and why you went there",
+    "What the place was like",
+    "How you felt about the place"
+  ],
+  "audioUrl": "",
+  "sampleAnswer": "I'd like to describe a natural place in my city that I love to visit — a riverside park near the centre. It is a long green strip along the river, with towering trees, colourful flower beds, and a walking and cycling path that runs for several kilometres. Even in the middle of the city, it feels surprisingly tranquil and leafy.\nI usually go there in the early morning or at sunset, when it is peaceful and uncrowded, sometimes with my parents and sometimes on my own. I love the fresh, clean air and the quiet — you can hear the birds and the water instead of traffic. I often walk for about an hour along the shady, spacious paths, and I always feel calmer and more relaxed afterwards.\nWhat makes it special to me is that it is a peaceful escape from the busy city, so I have made it a habit to go there whenever I feel stressed. I really enjoy this place, and I would recommend it to anyone who needs a break from city life.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "towering trees",
+      "pos": "n. phr.",
+      "chinese": "参天大树",
+      "exampleSentence": "The park is lined with towering trees that provide plenty of shade in summer.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-2",
+      "term": "colourful flower beds",
+      "pos": "n. phr.",
+      "chinese": "五彩缤纷的花坛",
+      "exampleSentence": "Visitors are immediately greeted by colourful flower beds at the entrance.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-3",
+      "term": "tranquil and leafy",
+      "pos": "adj. phr.",
+      "chinese": "宁静且绿树成荫的",
+      "exampleSentence": "Even in the middle of the city, this neighbourhood feels surprisingly tranquil and leafy.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-4",
+      "term": "peaceful and uncrowded",
+      "pos": "adj. phr.",
+      "chinese": "宁静且不拥挤的",
+      "exampleSentence": "I prefer visiting the park at sunrise when it is peaceful and uncrowded.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-5",
+      "term": "fresh, clean air",
+      "pos": "n. phr.",
+      "chinese": "清新洁净的空气",
+      "exampleSentence": "Walking by the river allows me to breathe in the fresh, clean air.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-6",
+      "term": "shady, spacious paths",
+      "pos": "n. phr.",
+      "chinese": "树荫遮蔽的宽敞小径",
+      "exampleSentence": "Joggers and cyclists enjoy exercising along the shady, spacious paths.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-7",
+      "term": "calmer and more relaxed",
+      "pos": "adj. phr.",
+      "chinese": "更加平静和放松",
+      "exampleSentence": "Spending an hour in nature always leaves me feeling calmer and more relaxed.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-8",
+      "term": "peaceful escape",
+      "pos": "n. phr.",
+      "chinese": "宁静的避风港/逃离喧嚣之地",
+      "exampleSentence": "The botanical garden serves as a peaceful escape from the hustle and bustle of urban life.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-9",
+      "term": "make it a habit",
+      "pos": "v. phr.",
+      "chinese": "养成……的习惯",
+      "exampleSentence": "I have made it a habit to go for a stroll there whenever I feel overwhelmed.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    },
+    {
+      "id": "sv-10",
+      "term": "a break from city life",
+      "pos": "n. phr.",
+      "chinese": "从繁忙都市生活中喘口气/短暂抽离",
+      "exampleSentence": "This riverside park is ideal for anyone who needs a break from city life.",
+      "topicCategory": "地点与自然",
+      "sourceTestId": "spk-a-natural-place-in-the-city-mvtf5nq1"
+    }
+  ],
+  "mindMap": {
+    "label": "Central Riverside Park",
+    "children": [
+      {
+        "label": "Location and Scenery",
+        "children": [
+          {
+            "label": "Long green strip near city centre",
+            "children": []
+          },
+          {
+            "label": "Towering trees and colourful flower beds",
+            "children": []
+          },
+          {
+            "label": "Tranquil and leafy atmosphere",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Routine and Activities",
+        "children": [
+          {
+            "label": "Visit in early morning or at sunset",
+            "children": []
+          },
+          {
+            "label": "Walk along shady, spacious paths",
+            "children": []
+          },
+          {
+            "label": "Enjoy fresh air and natural sounds",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Personal Feelings",
+        "children": [
+          {
+            "label": "Feel calmer and more relaxed",
+            "children": []
+          },
+          {
+            "label": "A peaceful escape when stressed",
+            "children": []
+          },
+          {
+            "label": "A refreshing break from city life",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxBd5GU0c6-Y7Czq8wHo3vC1H1ySxotV2BtKAw4vGON_k5qBe1XxOd3g&s=10",
+      "caption": ""
+    },
+    {
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXt4R0ao7fHa9SJoJX3eiUS4CZn8pMAf8z_SWzyLF2fy_WI02hxLeNyJY&s=10",
+      "caption": ""
+    },
+    {
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6CbYaPaasSxQAU9XXg6Fq6qhlUW4czwPVpXMTyYEZfzSB0f9moNdPhnXB&s=10",
+      "caption": ""
+    }
+  ]
+}

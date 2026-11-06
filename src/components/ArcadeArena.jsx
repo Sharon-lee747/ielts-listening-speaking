@@ -15,10 +15,16 @@ import {
   Trophy,
   Volume2,
   Check,
-  AlertCircle
+  AlertCircle,
+  Zap
 } from 'lucide-react'
 import SentencePuzzle from './SentencePuzzle.jsx'
+import VerbalBlitz from './VerbalBlitz.jsx'
 import { getSpeakingTitle } from '../data/lessonIndex.js'
+import { COMPANION_AVATARS, COMPANION_DATA_URIS } from '../assets/arcade/companionAvatars.js'
+import zenForestBg from '../assets/arcade/zen_forest.png'
+import starryLibraryBg from '../assets/arcade/starry_library.jpg'
+
 
 function playChime(isCorrect) {
   try {
@@ -302,11 +308,13 @@ export default function ArcadeArena({
   const companionInfo = useMemo(() => {
     if (isVictory || score >= 800) {
       return {
+        key: 'vaelorn',
         tier: 'I',
         rankTitle: '✦ POCKET COMPANION · RANK I',
         name: 'Vaelorn',
         title: '🛡️ 语流誓约骑士 · Oathbound Knight',
-        avatar: '/arcade/companion_vaelorn.png',
+        avatar: COMPANION_AVATARS.vaelorn,
+        fallbackDataUri: COMPANION_DATA_URIS.vaelorn,
         badge: 'HONOR VANGUARD',
         quote: '“剑盾与意志同在！神速识破全部意群连携，战绩卓绝！”',
         themeClass: 'tier-knight'
@@ -314,22 +322,26 @@ export default function ArcadeArena({
     }
     if (score >= 400 || matchedKeys.size >= 4) {
       return {
+        key: 'orvynn',
         tier: 'II',
         rankTitle: '✦ POCKET COMPANION · RANK II',
         name: 'Orvynn',
         title: '🎵 灵韵吟游学者 · Requiem Bard',
-        avatar: '/arcade/companion_orvynn.png',
+        avatar: COMPANION_AVATARS.orvynn,
+        fallbackDataUri: COMPANION_DATA_URIS.orvynn,
         badge: 'HARMONY POET',
         quote: '“琴声奏响！你的连击节奏精准美妙，已录入雅思吟游史诗！”',
         themeClass: 'tier-bard'
       }
     }
     return {
+      key: 'lyriath',
       tier: 'III',
       rankTitle: '✦ POCKET QUEST · ROOKIE',
       name: 'Lyriath',
       title: '✨ 见习词语魔法师 · Moonveil Arcanist',
-      avatar: '/arcade/companion_lyriath.png',
+      avatar: COMPANION_AVATARS.lyriath,
+      fallbackDataUri: COMPANION_DATA_URIS.lyriath,
       badge: 'MIND NOVICE',
       quote: '“热身完毕！下一把必定连击拉满，翻开法典再冲一次！”',
       themeClass: 'tier-mage'
@@ -397,7 +409,7 @@ export default function ArcadeArena({
           >
             <div
               className="mode-card-bg"
-              style={{ backgroundImage: `url('/arcade/zen_forest.png')` }}
+              style={{ backgroundImage: `url(${zenForestBg})` }}
             />
             <div className="mode-card-overlay" />
             <div className="mode-card-content">
@@ -425,7 +437,7 @@ export default function ArcadeArena({
           >
             <div
               className="mode-card-bg"
-              style={{ backgroundImage: `url('/arcade/starry_library.jpg')` }}
+              style={{ backgroundImage: `url(${starryLibraryBg})` }}
             />
             <div className="mode-card-overlay" />
             <div className="mode-card-content">
@@ -440,6 +452,31 @@ export default function ArcadeArena({
                 <h3>雅思核心长难句【磁吸语块拼句】</h3>
               </div>
               <p>拖拽或点击磁吸虚线槽位，复原听力考点句与口语高分语序</p>
+            </div>
+          </button>
+
+          {/* Mode C: 10s Verbal Blitz */}
+          <button
+            type="button"
+            className={`arcade-mode-card mode-card-scenic mode-card-blitz ${arcadeMode === 'blitz' ? 'active' : ''}`}
+            onClick={() => setArcadeMode('blitz')}
+            role="tab"
+            aria-selected={arcadeMode === 'blitz'}
+          >
+            <div className="mode-card-bg mode-card-bg-blitz" />
+            <div className="mode-card-overlay" />
+            <div className="mode-card-content">
+              <div className="mode-card-header">
+                <span className="arcade-mode-kicker">MODE C · 10s VERBAL BLITZ</span>
+                {arcadeMode === 'blitz' && <span className="arcade-mode-active-pill">正在挑战</span>}
+              </div>
+              <div className="mode-card-title-row">
+                <div className="arcade-mode-card-icon">
+                  <Zap size={20} />
+                </div>
+                <h3>听说词汇【⚡ 10秒极速开口闪击】</h3>
+              </div>
+              <p>声控极速反应挑战，三段渐进提示，零 API 纯前端语音识别</p>
             </div>
           </button>
         </div>
@@ -518,6 +555,12 @@ export default function ArcadeArena({
           {/* 3D Pocket Companion Quest Settlement Overlay Modal */}
           {(isVictory || isGameOver) && (
             <div className="arcade-settlement-overlay">
+              {/* 4 Corner Crystal Star Marks (深邃磨砂暗晶画板角标) */}
+              <span className="settlement-crystal-star top-left" aria-hidden="true">✦</span>
+              <span className="settlement-crystal-star top-right" aria-hidden="true">✦</span>
+              <span className="settlement-crystal-star bottom-left" aria-hidden="true">✦</span>
+              <span className="settlement-crystal-star bottom-right" aria-hidden="true">✦</span>
+
               <div className={`pocket-quest-card-3d ${companionInfo.themeClass}`}>
                 {/* Pocket Quest Header */}
                 <div className="pocket-card-top">
@@ -528,13 +571,18 @@ export default function ArcadeArena({
                   <span className="pocket-card-num">{companionInfo.tier}</span>
                 </div>
 
-                {/* Arched Avatar Window with 3D Companion */}
+                {/* Arched Avatar Window with 100% Real 3D Pocket Quest Companion */}
                 <div className="pocket-avatar-stage">
                   <div className="pocket-avatar-arch">
                     <img
                       src={companionInfo.avatar}
                       alt={companionInfo.name}
                       className="pocket-companion-img"
+                      onError={(e) => {
+                        if (companionInfo.fallbackDataUri && e.currentTarget.src !== companionInfo.fallbackDataUri) {
+                          e.currentTarget.src = companionInfo.fallbackDataUri
+                        }
+                      }}
                     />
                   </div>
                   <span className="pocket-hero-badge">{companionInfo.badge}</span>
@@ -575,7 +623,7 @@ export default function ArcadeArena({
                     onClick={startNewMatchGame}
                   >
                     <RotateCcw size={16} />
-                    <span>🔄 再来一局 (Rematch)</span>
+                    <span>再来一局 (Rematch)</span>
                   </button>
                   <button
                     type="button"
@@ -589,7 +637,7 @@ export default function ArcadeArena({
                     }}
                   >
                     <BookOpen size={16} />
-                    <span>📚 回去背词 (Review Words)</span>
+                    <span>回去背词 (Review Words)</span>
                   </button>
                 </div>
               </div>
@@ -668,6 +716,18 @@ export default function ArcadeArena({
               💡 提示：磁吸槽位支持鼠标拖放或直接点击词块快速填入，拼好后自动播放判分。
             </span>
           </div>
+        </section>
+      )}
+
+      {/* ===================== MODE C VIEW ===================== */}
+      {arcadeMode === 'blitz' && (
+        <section className="arcade-stage-card blitz-mode-stage">
+          <VerbalBlitz
+            vocabulary={vocabulary}
+            allTests={allTests}
+            allSpeakingLessons={allSpeakingLessons}
+            onNavigateTab={onNavigateTab}
+          />
         </section>
       )}
     </div>

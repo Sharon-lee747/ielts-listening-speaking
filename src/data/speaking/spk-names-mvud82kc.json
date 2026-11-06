@@ -1,0 +1,150 @@
+{
+  "id": "spk-names-mvud82kc",
+  "title": "Names",
+  "part": "Part 1",
+  "topicCategory": "个人与日常生活",
+  "questionPrompt": "Names",
+  "questions": [
+    {
+      "question": "Is it easy to remember people’s names?",
+      "sampleAnswer": "To be honest, I’d say it is quite easy for me, because I try to connect a name with something about the person, like their job or their face. That little trick makes it stick in my mind much better.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "How do you remember people’s names?",
+      "sampleAnswer": "What I usually do is repeat the name a few times in my head, and I also connect it to something about the person, like their job or appearance. That helps me remember it much better.",
+      "perspective": "思路二"
+    },
+    {
+      "question": "How do you feel when people can’t remember your name?",
+      "sampleAnswer": "Well, I wouldn’t take it personally. I think it’s perfectly normal to forget names, because everyone meets so many people. As long as they make an effort later, I’m fine with it.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "Do you often forget people’s names?",
+      "sampleAnswer": "I’d say I do forget them quite often, especially when I meet a lot of new people at once. So I usually try to use the name right away to fix it in my memory.",
+      "perspective": "思路二"
+    }
+  ],
+  "cueCardPoints": [],
+  "audioUrl": "",
+  "sampleAnswer": "To be honest, I’d say it is quite easy for me, because I try to connect a name with something about the person, like their job or their face. That little trick makes it stick in my mind much better.",
+  "vocabulary": [
+    {
+      "id": "sv-1",
+      "term": "connect a name with",
+      "pos": "v. phr.",
+      "chinese": "将名字与……联系起来",
+      "exampleSentence": "I try to connect a name with something distinct about the person, like their job or face.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-names-mvud82kc"
+    },
+    {
+      "id": "sv-2",
+      "term": "stick in one's mind",
+      "pos": "idiom",
+      "chinese": "牢牢印在脑海中",
+      "exampleSentence": "Using mnemonic tricks helps new acquaintances' names stick in my mind much better.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-names-mvud82kc"
+    },
+    {
+      "id": "sv-3",
+      "term": "take it personally",
+      "pos": "idiom",
+      "chinese": "视作冒犯/往心里去",
+      "exampleSentence": "I wouldn't take it personally if someone forgets my name upon our first brief meeting.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-names-mvud82kc"
+    },
+    {
+      "id": "sv-4",
+      "term": "fix ... in one's memory",
+      "pos": "v. phr.",
+      "chinese": "在记忆中加深印象/固定住",
+      "exampleSentence": "I usually try to repeat the person's name right away to fix it in my memory.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-names-mvud82kc"
+    },
+    {
+      "id": "sv-5",
+      "term": "make an effort",
+      "pos": "v. phr.",
+      "chinese": "付出努力/尽量去做",
+      "exampleSentence": "As long as people make an effort to ask politely, I never mind reminding them.",
+      "topicCategory": "个人与日常生活",
+      "sourceTestId": "spk-names-mvud82kc"
+    }
+  ],
+  "mindMap": {
+    "label": "Remembering Names & Social Etiquette",
+    "children": [
+      {
+        "label": "Memory Strategies",
+        "children": [
+          {
+            "label": "Linking names to facial features or occupations",
+            "children": []
+          },
+          {
+            "label": "Mental rehearsal to ensure it sticks",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Emotional Response to Being Forgotten",
+        "children": [
+          {
+            "label": "Not taking forgetfulness personally",
+            "children": []
+          },
+          {
+            "label": "Empathizing with information overload",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Proactive Retention Tactics",
+        "children": [
+          {
+            "label": "Addressing new contacts immediately by name",
+            "children": []
+          },
+          {
+            "label": "Fixing identity cues into long-term memory",
+            "children": []
+          }
+        ]
+      },
+      {
+        "label": "Common Challenges",
+        "children": [
+          {
+            "label": "Sensory overload in large networking events",
+            "children": []
+          },
+          {
+            "label": "Frequent lapses when meeting crowds simultaneously",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=900&auto=format&fit=crop&q=80",
+      "caption": "Personal Identity and Portraits"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=80",
+      "caption": "Social Interaction and Meeting New People"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=900&auto=format&fit=crop&q=80",
+      "caption": "Handwriting Signatures and Calligraphy"
+    }
+  ]
+}

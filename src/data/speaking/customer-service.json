@@ -4,7 +4,18 @@
   "part": "Part 2 & 3",
   "topicCategory": "经营理念与服务类",
   "questionPrompt": "Part 2: Describe a time when you received excellent customer service. You should say what the service was, when and where you received it, who provided it, and explain why you thought it was excellent.\n\nPart 3: Why is good customer service important? How can businesses encourage customer loyalty?",
-  "questions": [],
+  "questions": [
+    {
+      "question": "Why is good customer service important?",
+      "sampleAnswer": "In an era of commoditized products, personalized customer care forms the decisive competitive differentiator. Attentive and sincere service builds enduring emotional resonance with consumers, fostering genuine trust and loyalty.",
+      "perspective": "思路一"
+    },
+    {
+      "question": "How can businesses encourage customer loyalty?",
+      "sampleAnswer": "Beyond conventional loyalty points, businesses cultivate deep customer affinity by consistently exceeding expectations. Empowering frontline employees to resolve grievances autonomously and delivering bespoke recommendations creates an authentic feeling of community.",
+      "perspective": "思路二"
+    }
+  ],
   "cueCardPoints": [
     "What the service was",
     "When and where you received it",
